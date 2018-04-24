@@ -17,20 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Jason.Yang的博客</title>
-  <meta name="description" content="杨雨庚的博客--点滴成长">
-<meta name="keywords" content="杨雨庚的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jason.Yang">
-<meta property="og:url" content="http://yyg.wiki/index.html">
+  <title>Linux下 /dev/shm 目录作用 | Jason.Yang的博客</title>
+  <meta name="description" content="/dev/shm/是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用/dev/shm/就可达到很好的优化效果。\ /dev /shm/需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df -h命令可以看到。但它并不会真正的占用这块内存，如果/dev/shm/下没有任何文件，它占用的内存实">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下 &#x2F;dev&#x2F;shm 目录作用">
+<meta property="og:url" content="http://yyg.wiki/2018/04/24/Linux下-dev-shm-目录作用/index.html">
 <meta property="og:site_name" content="Jason.Yang">
-<meta property="og:description" content="杨雨庚的博客--点滴成长">
+<meta property="og:description" content="/dev/shm/是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用/dev/shm/就可达到很好的优化效果。\ /dev /shm/需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df -h命令可以看到。但它并不会真正的占用这块内存，如果/dev/shm/下没有任何文件，它占用的内存实">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-24T09:24:20.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jason.Yang">
-<meta name="twitter:description" content="杨雨庚的博客--点滴成长">
+<meta name="twitter:title" content="Linux下 &#x2F;dev&#x2F;shm 目录作用">
+<meta name="twitter:description" content="/dev/shm/是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用/dev/shm/就可达到很好的优化效果。\ /dev /shm/需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df -h命令可以看到。但它并不会真正的占用这块内存，如果/dev/shm/下没有任何文件，它占用的内存实">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/index.html">
+  <link rel="canonical" href="http://yyg.wiki/2018/04/24/Linux下-dev-shm-目录作用/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Jason.Yang" type="application/atom+xml">
   
@@ -246,18 +247,17 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  
-    <div class="content">
+<main class="main" role="main">
+  <div class="content">
   <article id="post-Linux下-dev-shm-目录作用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/24/Linux下-dev-shm-目录作用/">Linux下 /dev/shm 目录作用</a>
+    <h1 class="article-title" itemprop="name">
+      Linux下 /dev/shm 目录作用
     </h1>
   
 
@@ -333,11 +333,82 @@
     </div>
   </article>
   
-</div>
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
 
   
+</div>
 
-   
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -396,6 +467,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 
