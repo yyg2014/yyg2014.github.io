@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jason.Yang</title>
+  
+  <subtitle>杨雨庚的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yyg.wiki/"/>
+  <updated>2018-04-26T02:15:26.000Z</updated>
+  <id>http://yyg.wiki/</id>
+  
+  <author>
+    <name>Jason.Yang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu下常见压缩/解压缩文件命令</title>
+    <link href="http://yyg.wiki/2018/04/26/Ubuntu%E4%B8%8B%E5%B8%B8%E8%A7%81%E5%8E%8B%E7%BC%A9-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/</id>
+    <published>2018-04-26T02:14:15.000Z</published>
+    <updated>2018-04-26T02:15:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ZIP"><a href="#ZIP" class="headerlink" title="ZIP"></a>ZIP</h3><h5 id="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："><a href="#zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：" class="headerlink" title="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："></a>zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：</h5><h5 id="我们可以使用下列的命令压缩一个目录："><a href="#我们可以使用下列的命令压缩一个目录：" class="headerlink" title="我们可以使用下列的命令压缩一个目录："></a>我们可以使用下列的命令压缩一个目录：</h5><blockquote><p>zip -r archive_name.zip directory_to_compress</p></blockquote><h5 id="下面是如果解压一个zip文档："><a href="#下面是如果解压一个zip文档：" class="headerlink" title="下面是如果解压一个zip文档："></a>下面是如果解压一个zip文档：</h5><blockquote><p>unzip archive_name.zip</p></blockquote><h3 id="TAR"><a href="#TAR" class="headerlink" title="TAR"></a>TAR</h3><h4 id="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："><a href="#Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：" class="headerlink" title="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："></a>Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：</h4><blockquote><p>tar -cvf archive_name.tar directory_to_compress</p></blockquote><h4 id="如何解包："><a href="#如何解包：" class="headerlink" title="如何解包："></a>如何解包：</h4><blockquote><p>tar -xvf archive_name.tar.gz</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -xvf archive_name.tar -C /tmp/extract_here/</p></blockquote><h3 id="TAR-GZ"><a href="#TAR-GZ" class="headerlink" title="TAR.GZ"></a>TAR.GZ</h3><h5 id="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："><a href="#这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：" class="headerlink" title="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："></a>这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：</h5><blockquote><p>tar -zcvf archive_name.tar.gz directory_to_compress</p></blockquote><h5 id="解压缩："><a href="#解压缩：" class="headerlink" title="解压缩："></a>解压缩：</h5><blockquote><p>tar -zxvf archive_name.tar.gz</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</p></blockquote><h3 id="TAR-BZ2"><a href="#TAR-BZ2" class="headerlink" title="TAR.BZ2"></a>TAR.BZ2</h3><h5 id="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。"><a href="#这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。" class="headerlink" title="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。"></a>这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。</h5><blockquote><p>tar -jcvf archive_name.tar.bz2 directory_to_compress</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;ZIP&quot;&gt;&lt;a href=&quot;#ZIP&quot; class=&quot;headerlink&quot; title=&quot;ZIP&quot;&gt;&lt;/a&gt;ZIP&lt;/h3&gt;&lt;h5 id=&quot;zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下 /dev/shm 目录作用</title>
+    <link href="http://yyg.wiki/2018/04/24/Linux%E4%B8%8B-dev-shm-%E7%9B%AE%E5%BD%95%E4%BD%9C%E7%94%A8/"/>
+    <id>http://yyg.wiki/2018/04/24/Linux下-dev-shm-目录作用/</id>
+    <published>2018-04-24T09:22:37.000Z</published>
+    <updated>2018-04-24T09:24:20.177Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="dev-shm-是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用-dev-shm-就可达到很好的优化效果。-dev-shm-需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df-h命令可以看到。但它并不会真正的占用这块内存，如果-dev-shm-下没有任何文件，它占用的内存实际上就是0字节；如果它最大为1G，里头放有-100M文件，那剩余的900M仍然可为其它应用程序所使用，但它所占用的100M内存，是绝不会被系统回收重新划分的，否则谁还敢往里头存文件呢？"><a href="#dev-shm-是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用-dev-shm-就可达到很好的优化效果。-dev-shm-需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df-h命令可以看到。但它并不会真正的占用这块内存，如果-dev-shm-下没有任何文件，它占用的内存实际上就是0字节；如果它最大为1G，里头放有-100M文件，那剩余的900M仍然可为其它应用程序所使用，但它所占用的100M内存，是绝不会被系统回收重新划分的，否则谁还敢往里头存文件呢？" class="headerlink" title="/dev/shm/是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用/dev/shm/就可达到很好的优化效果。\ /dev /shm/需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df -h命令可以看到。但它并不会真正的占用这块内存，如果/dev/shm/下没有任何文件，它占用的内存实际上就是0字节；如果它最大为1G，里头放有 100M文件，那剩余的900M仍然可为其它应用程序所使用，但它所占用的100M内存，是绝不会被系统回收重新划分的，否则谁还敢往里头存文件呢？"></a>/dev/shm/是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用/dev/shm/就可达到很好的优化效果。<em>\</em> /dev /shm/需要注意的一个是容量问题，在linux下，它默认最大为内存的一半大小，使用df -h命令可以看到。但它并不会真正的占用这块内存，如果/dev/shm/下没有任何文件，它占用的内存实际上就是0字节；如果它最大为1G，里头放有 100M文件，那剩余的900M仍然可为其它应用程序所使用，但它所占用的100M内存，是绝不会被系统回收重新划分的，否则谁还敢往里头存文件呢？</h3><p>默认系统就会加载/dev/shm ，它就是所谓的tmpfs，有人说跟ramdisk（虚拟磁盘），但不一样。象虚拟磁盘一样，tmpfs 可以使用您的 RAM，但它也可以使用您的交换分区来存储。而且传统的虚拟磁盘是个块设备，并需要一个 mkfs 之类的命令才能真正地使用它，tmpfs 是一个文件系统，而不是块设备；您只是安装它，它就可以使用了。</p><h4 id="tmpfs有以下优势："><a href="#tmpfs有以下优势：" class="headerlink" title="tmpfs有以下优势："></a>tmpfs有以下优势：</h4><p>1，动态文件系统的大小。<br>2，tmpfs 的另一个主要的好处是它闪电般的速度。因为典型的 tmpfs 文件系统会完全驻留在 RAM 中，读写几乎可以是瞬间的。<br>3，tmpfs 数据在重新启动之后不会保留，因为虚拟内存本质上就是易失的。所以有必要做一些脚本做诸如加载，绑定的操作。</p><h4 id="二、修改-dev-shm大小"><a href="#二、修改-dev-shm大小" class="headerlink" title="二、修改/dev/shm大小"></a>二、修改/dev/shm大小</h4><p>默认的最大一半内存大小在某些场合可能不够用，并且默认的inode数量很低一般都要调高些，这时可以用mount命令来管理它。<br><code>mount -o size=1500M -o nr_inodes=1000000 -o noatime,nodiratime -o remount /dev/shm</code><br>在2G的机器上，将最大容量调到1.5G，并且inode数量调到1000000，这意味着大致可存入最多一百万个小文件。<br>如果需要永久修改/dev/shm的值，需要修改/etc/fstab<br>tmpfs /dev/shm tmpfs defaults,size=1.5G 0 0<br><code>mount -o remount /dev/shm</code></p><h4 id="三、-dev-shm应用"><a href="#三、-dev-shm应用" class="headerlink" title="三、/dev/shm应用"></a>三、/dev/shm应用</h4><p>首先在/dev/shm建个tmp文件夹，然后与实际/tmp绑定<br><code>mkdir /dev/shm/tmp</code><br><code>chmod 1777 /dev/shm/tmp</code><br><code>mount –bind /dev/shm/tmp /tmp（–bind ）</code><br>在使用mount –bind olderdir newerdir命令来挂载一个目录到另一个目录后，newerdir的权限和所有者等所有信息会发生变化。挂载后的目录继承了被挂载目录的所有属性，除了名称。Oracle11g的amm内存管理模式就是使用/dev/shm，所以有时候修改MEMORY_TARGET或者MEMORY_MAX_TARGET会出现ORA-00845的错误<br>Linux目录结构<a href="http://www.linuxidc.com/Linux/2013-09/89743.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2013-09/89743.htm</a><br>Linux学习笔记——Linux目录配置<a href="http://www.linuxidc.com/Linux/2012-12/75336.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2012-12/75336.htm</a><br>Linux目录配置标准FHS <a href="http://www.linuxidc.com/Linux/2012-06/62532.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2012-06/62532.htm</a><br>Linux入门之 带你剖析Linux目录结构<a href="http://www.linuxidc.com/Linux/2012-01/51246.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2012-01/51246.htm</a><br>Linux认证辅导：关于Linux目录及文档权限的研究<a href="http://www.linuxidc.com/Linux/2011-11/47970.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2011-11/47970.htm</a><br>Linux认证辅导：Linux目录的分类存放规则<a href="http://www.linuxidc.com/Linux/2011-11/47747.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2011-11/47747.htm</a><br>转自：<a href="http://it.010lm.com/os/LINUX/164121.html" target="_blank" rel="noopener">http://it.010lm.com/os/LINUX/164121.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;dev-shm-是linux下一个非常有用的目录，因为这个目录不在硬盘上，而是在内存里。因此在linux下，就不需要大费周折去建ramdisk，直接使用-dev-shm-就可达到很好的优化效果。-dev-shm-需要注意的一个是容量问题，在linux下，它默认最大
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>
