@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yyg.wiki/2018/04/26/LNMP%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88Ubuntu14-04LTS-Nginx1-8-0-Mysql5-5-29-PHP5-6-13%EF%BC%89%E5%8E%9F%E5%88%9B/</loc>
-    <lastmod>2018-04-26T07:25:33.000Z</lastmod>
+    <lastmod>2018-04-26T07:28:09.000Z</lastmod>
     <data>
         <display>
         <title>LNMP环境搭建（Ubuntu14.04LTS+Nginx1.8.0+Mysql5.5.29+PHP5.6.13）原创 </title>
@@ -14,6 +14,8 @@
         <tag>Linux</tag>
          
         <tag>PHP</tag>
+         
+        <tag>Nginx</tag>
          
          
            
