@@ -18,18 +18,18 @@
   
   
   <title>浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结） | Jason.Yang的博客</title>
-  <meta name="description" content="const与define的特点与区别**1.  const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。  const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句">
+  <meta name="description" content="const与define的特点与区别 const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。 const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句中使用。 c">
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结）">
 <meta property="og:url" content="http://yyg.wiki/2018/04/26/浅析PHP中STATIC、CONST、-DEFINE的区别（归纳总结）/index.html">
 <meta property="og:site_name" content="Jason.Yang">
-<meta property="og:description" content="const与define的特点与区别**1.  const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。  const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句">
+<meta property="og:description" content="const与define的特点与区别 const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。 const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句中使用。 c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T07:44:55.000Z">
+<meta property="og:updated_time" content="2018-04-26T07:48:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结）">
-<meta name="twitter:description" content="const与define的特点与区别**1.  const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。  const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句">
+<meta name="twitter:description" content="const与define的特点与区别 const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。 const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。 const不可以在条件判断语句中使用，define可以在条件判断语句中使用。 c">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yyg.wiki/2018/04/26/浅析PHP中STATIC、CONST、-DEFINE的区别（归纳总结）/index.html">
   
@@ -133,7 +133,7 @@
         
         
         
-        <li class="menu-item menu-item-tags active">
+        <li class="menu-item menu-item-tags">
           <a href="/tags">
             
             <i class="icon icon-tags"></i>
@@ -144,7 +144,7 @@
         
         
         
-        <li class="menu-item menu-item-repository">
+        <li class="menu-item menu-item-repository active">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -339,19 +339,19 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h2 id="const与define的特点与区别"><a href="#const与define的特点与区别" class="headerlink" title="const与define的特点与区别"></a>const与define的特点与区别</h2><p>**1.  const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。</p>
-<ol start="2">
+        <h2 id="const与define的特点与区别"><a href="#const与define的特点与区别" class="headerlink" title="const与define的特点与区别"></a>const与define的特点与区别</h2><ol>
+<li>const是语言结构，而define是函数。在常量编译时const所做的仅仅是替换即可，而define因为是函数，效率低于const。</li>
 <li>const支持的数据类型为：boolean，string，float，integer，const不支持表达式赋值。而define支持表达式赋值。</li>
 <li>const不可以在条件判断语句中使用，define可以在条件判断语句中使用。</li>
 <li>const可以在类中使用，define不可以。</li>
 <li>const严格区分大小写，define可以通过参数进行选择。</li>
-<li>const可以在类外部、类内部。但是不可以出现在函数中。**<h2 id="const与staic的区别"><a href="#const与staic的区别" class="headerlink" title="const与staic的区别"></a>const与staic的区别</h2></li>
+<li>const可以在类外部、类内部。但是不可以出现在函数中。</li>
 </ol>
-<p>**1. const定义类成员属性时。一经定义不可修改。而static只相当于初始化类的时候设置一个默认值，在后续的操作中可以被改变，包括内部修改和外部修改。</p>
-<ol start="2">
+<h2 id="const与staic的区别"><a href="#const与staic的区别" class="headerlink" title="const与staic的区别"></a>const与staic的区别</h2><ol>
+<li>const定义类成员属性时。一经定义不可修改。而static只相当于初始化类的时候设置一个默认值，在后续的操作中可以被改变，包括内部修改和外部修改。</li>
 <li>const与static在类内部所定义的成员属性均可以在不实例化该类的条件下在外部调用，而且调用方式一致: ”类名称::成员属性名称“（调用静态属性时要加$符号）</li>
 <li>const定义的类成员属性必须通过类名称在类外部调用。</li>
-<li>const定义的成员属性在内部调用时与静态成员属性一致均使用 “self::属性名称” 方式调用**</li>
+<li>const定义的成员属性在内部调用时与静态成员属性一致均使用 “self::属性名称” 方式调用</li>
 </ol>
 
       
