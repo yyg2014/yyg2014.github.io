@@ -18,18 +18,18 @@
   
   
   <title>git创建与删除分支 | Jason.Yang的博客</title>
-  <meta name="description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop 12&amp;gt;    git checkout -b develop master&amp;gt;  切换到master分支 12&amp;gt;    git checkout master&amp;gt;  合并d">
+  <meta name="description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop   git checkout -b develop master  切换到master分支    git checkout master  合并develop分支到master    git">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git创建与删除分支">
 <meta property="og:url" content="http://yyg.wiki/2018/04/26/git创建与删除分支/index.html">
 <meta property="og:site_name" content="Jason.Yang">
-<meta property="og:description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop 12&amp;gt;    git checkout -b develop master&amp;gt;  切换到master分支 12&amp;gt;    git checkout master&amp;gt;  合并d">
+<meta property="og:description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop   git checkout -b develop master  切换到master分支    git checkout master  合并develop分支到master    git">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T07:32:15.037Z">
+<meta property="og:updated_time" content="2018-04-26T07:34:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git创建与删除分支">
-<meta name="twitter:description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop 12&amp;gt;    git checkout -b develop master&amp;gt;  切换到master分支 12&amp;gt;    git checkout master&amp;gt;  合并d">
+<meta name="twitter:description" content="Git之分支创建策略分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。 创建master的分支develop   git checkout -b develop master  切换到master分支    git checkout master  合并develop分支到master    git">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yyg.wiki/2018/04/26/git创建与删除分支/index.html">
   
@@ -122,7 +122,7 @@
         
         
         
-        <li class="menu-item menu-item-categories active">
+        <li class="menu-item menu-item-categories">
           <a href="/categories">
             
             <i class="icon icon-folder"></i>
@@ -144,7 +144,7 @@
         
         
         
-        <li class="menu-item menu-item-repository">
+        <li class="menu-item menu-item-repository active">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -341,13 +341,13 @@
       
         <h2 id="Git之分支创建策略"><a href="#Git之分支创建策略" class="headerlink" title="Git之分支创建策略"></a>Git之分支创建策略</h2><p>分支策略：git上始终保持两个分支，master分支与develop分支。master分支主要用于发布时使用，而develop分支主要用于开发使用。</p>
 <h3 id="创建master的分支develop"><a href="#创建master的分支develop" class="headerlink" title="创建master的分支develop"></a>创建master的分支develop</h3><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;    git checkout -b develop master</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>  git checkout -b develop master</p>
 </blockquote>
 <h3 id="切换到master分支"><a href="#切换到master分支" class="headerlink" title="切换到master分支"></a>切换到master分支</h3><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;    git checkout master</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>   git checkout master</p>
 </blockquote>
 <h3 id="合并develop分支到master"><a href="#合并develop分支到master" class="headerlink" title="合并develop分支到master"></a>合并develop分支到master</h3><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;    git merge --no-ff develop</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>   git merge –no-ff develop</p>
 </blockquote>
 <p>除了以上两个常驻分支外，我们还可以适当分支出三种分支：功能分支、预发布分支、修补分支，这三种分支使用完后也该删除，保持两个常驻分支。</p>
 <h3 id="功能分支：该分支从develop中分支出来，开发完成后再合并入develop，名字采用feature-的形式命名。"><a href="#功能分支：该分支从develop中分支出来，开发完成后再合并入develop，名字采用feature-的形式命名。" class="headerlink" title="功能分支：该分支从develop中分支出来，开发完成后再合并入develop，名字采用feature-* 的形式命名。"></a>功能分支：该分支从develop中分支出来，开发完成后再合并入develop，名字采用feature-* 的形式命名。</h3><h3 id="创建功能分支："><a href="#创建功能分支：" class="headerlink" title="创建功能分支："></a>创建功能分支：</h3><blockquote>
