@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yyg.wiki/"/>
-  <updated>2018-04-26T07:48:27.000Z</updated>
+  <updated>2018-04-26T07:50:17.866Z</updated>
   <id>http://yyg.wiki/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu常用操作命令(个人常用)</title>
+    <link href="http://yyg.wiki/2018/04/26/Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E4%B8%AA%E4%BA%BA%E5%B8%B8%E7%94%A8/"/>
+    <id>http://yyg.wiki/2018/04/26/Ubuntu常用操作命令-个人常用/</id>
+    <published>2018-04-26T07:49:37.000Z</published>
+    <updated>2018-04-26T07:50:17.866Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="查看进程常用命令"><a href="#查看进程常用命令" class="headerlink" title="查看进程常用命令"></a>查看进程常用命令</h4><p><code>ps -ef</code><br><code>ps -aux</code></p><p><code>ps -ef|grep xx</code><br><code>ps -aux|grep xx</code></p><h5 id="STAT状态"><a href="#STAT状态" class="headerlink" title="STAT状态:"></a>STAT状态:</h5><p><code>Ss</code><br><code>Ss1</code><br><code>Ss+</code><br><code>S&lt;</code><br><code>R+</code><br><code>S&lt;s1</code><br><code>S&lt;s</code></p><h5 id="stat-中的参数意义如下："><a href="#stat-中的参数意义如下：" class="headerlink" title="stat 中的参数意义如下："></a>stat 中的参数意义如下：</h5><p><code>D 不可中断 Uninterruptible（usually IO）</code><br><code>R 正在运行，或在队列中的进程</code><br><code>S 处于休眠状态</code><br><code>T 停止或被追踪</code><br><code>Z 僵尸进程</code><br><code>W 进入内存交换（从内核2.6开始无效）</code><br><code>X   死掉的进程</code></p><p><code>&lt; 高优先级</code><br><code>n   低优先级</code><br><code>s   包含子进程</code><br><code>+   位于后台的进程组</code> </p><hr><h4 id="查看端口常用命令"><a href="#查看端口常用命令" class="headerlink" title="查看端口常用命令"></a>查看端口常用命令</h4><p><code>netstat -tnlp|grep 进程名称/端口号</code></p><hr><h4 id="查看内存"><a href="#查看内存" class="headerlink" title="查看内存"></a>查看内存</h4><p><code>free -m</code></p><hr><h4 id="查看磁盘空间"><a href="#查看磁盘空间" class="headerlink" title="查看磁盘空间"></a>查看磁盘空间</h4><p><code>df -h</code></p><hr><h4 id="可添加开机运行命令"><a href="#可添加开机运行命令" class="headerlink" title="可添加开机运行命令"></a>可添加开机运行命令</h4><p><code>/etc/rc.local</code></p><hr><h4 id="linux中可节省磁盘IO增加运行速度的小技巧-利用内存存放文件-如-session-cookie-等读写速度快-但重启文件消失"><a href="#linux中可节省磁盘IO增加运行速度的小技巧-利用内存存放文件-如-session-cookie-等读写速度快-但重启文件消失" class="headerlink" title="linux中可节省磁盘IO增加运行速度的小技巧 利用内存存放文件 如 session cookie 等读写速度快 但重启文件消失"></a>linux中可节省磁盘IO增加运行速度的小技巧 利用内存存放文件 如 session cookie 等读写速度快 但重启文件消失</h4><p><code>/dev/shm</code> 实际 连接目录为 <code>/run/shm</code></p><hr><h4 id="断网后命"><a href="#断网后命" class="headerlink" title="断网后命"></a>断网后命</h4><p><code>tail /var/log/syslog -n 20</code></p><p><code>ifconfig eth0 down</code><br><code>ifconfig eth0 up</code></p><hr><h4 id="文件查找命令"><a href="#文件查找命令" class="headerlink" title="文件查找命令"></a>文件查找命令</h4><p><code>find / -name ×××</code><br><code>whereis ×××</code></p><hr><h4 id="开机自动挂载设置"><a href="#开机自动挂载设置" class="headerlink" title="开机自动挂载设置"></a>开机自动挂载设置</h4><p><code>/etc/fstab</code></p><hr><h4 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h4><p> <code>/etc/rc.d</code></p><hr><h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><p><code>vim /etc/passwd</code></p><hr><h4 id="查看文件大小"><a href="#查看文件大小" class="headerlink" title="查看文件大小"></a>查看文件大小</h4><p><code>du -h filename</code></p><p> 以gb单位查看<br><code>du --block-size=GB filename</code></p><hr><h4 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h4><p><code>passwd root</code></p><hr><h4 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h4><p><code>pkill -9 process number or process name(master)</code></p><p><code>kill -9 process number</code></p><hr><h4 id="查看登录用户"><a href="#查看登录用户" class="headerlink" title="查看登录用户"></a>查看登录用户</h4><p><code>w</code></p><hr><h4 id="用户信息"><a href="#用户信息" class="headerlink" title="用户信息"></a>用户信息</h4><p><code>/etc/passwd</code></p><hr><h4 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h4><p><code>crontab</code></p><hr><h4 id="查看文件的的行数-字符数"><a href="#查看文件的的行数-字符数" class="headerlink" title="查看文件的的行数 字符数"></a>查看文件的的行数 字符数</h4><p><code>wc -c filename</code> 显示文件的字节数<br><code>wc -m filename</code> 显示文件的字符数<br><code>wc -l filename</code> 显示文件的行数<br><code>wc -L filename</code> 显示文件的最长行长度<br><code>wc -w filename</code> 显示文件的字数</p><hr><h4 id="搜索apt-get-库文件"><a href="#搜索apt-get-库文件" class="headerlink" title="搜索apt-get 库文件"></a>搜索apt-get 库文件</h4><p><code>apt-cache search libname</code></p><hr><h4 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h4><p><code>chomd -r 0777 XXXX</code><br><code>chome +x/+r/+w</code></p><hr><h4 id="拥有着-所属组"><a href="#拥有着-所属组" class="headerlink" title="拥有着 所属组"></a>拥有着 所属组</h4><p><code>chown -R</code><br><code>chgrp -R</code></p><hr><h4 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h4><p><code>mkdir -p xxx/xxx</code></p><hr><h4 id="dpkg-安装deb包"><a href="#dpkg-安装deb包" class="headerlink" title="dpkg 安装deb包"></a>dpkg 安装deb包</h4><p><code>dpkg -i  xxx.deb</code><br><code>dpkg -r xxxx..deb 卸载</code></p><hr><h4 id="常见解压"><a href="#常见解压" class="headerlink" title="常见解压"></a>常见解压</h4><p><code>tar -zxvf xxxx -C xxxx/xxxx</code></p><p><code>*.tar 用 tar –xvf 解压</code><br><code>*.gz 用 gzip -d或者gunzip 解压</code><br><code>*.tar.gz和*.tgz 用 tar –xzf 解压</code><br><code>*.bz2 用 bzip2 -d或者用bunzip2 解压</code><br><code>*.tar.bz2用tar –xjf 解压</code><br><code>*.Z 用 uncompress 解压</code><br><code>*.tar.Z 用tar –xZf 解压</code><br><code>*.rar 用 unrar e解压</code><br><code>*.zip 用 unzip 解压</code></p><hr><h4 id="链接-软链"><a href="#链接-软链" class="headerlink" title="链接/软链"></a>链接/软链</h4><p><code>ln -s 源文件 目标文件      软链</code><br><code>ln 源文件 目标文件  硬链</code></p><hr><h4 id="移动-重命名文件"><a href="#移动-重命名文件" class="headerlink" title="移动/重命名文件"></a>移动/重命名文件</h4><p><code>mv 源文件 目标位置</code><br><code>mv  a.txt b.txt  重命名</code></p><hr><h4 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h4><p><code>cp 源文件 目标位置</code></p><hr><h4 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h4><p><code>wget URL路径</code></p><hr><h4 id="apt-安装"><a href="#apt-安装" class="headerlink" title="apt 安装"></a>apt 安装</h4><p><code>apt-get install -y xxxxx</code><br><code>apt-get remove xxxxx</code><br><code>apt-get update</code></p><hr><h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><p><code>touch aa.txt</code></p><hr><h4 id="截断-输出文件内容"><a href="#截断-输出文件内容" class="headerlink" title="截断/输出文件内容"></a>截断/输出文件内容</h4><p><code>cat</code></p><hr><h4 id="重启系统-关闭系统"><a href="#重启系统-关闭系统" class="headerlink" title="重启系统/关闭系统"></a>重启系统/关闭系统</h4><p><code>init 6</code><br><code>init 0</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;查看进程常用命令&quot;&gt;&lt;a href=&quot;#查看进程常用命令&quot; class=&quot;headerlink&quot; title=&quot;查看进程常用命令&quot;&gt;&lt;/a&gt;查看进程常用命令&lt;/h4&gt;&lt;p&gt;&lt;code&gt;ps -ef&lt;/code&gt;&lt;br&gt;&lt;code&gt;ps -aux&lt;/code&gt;&lt;/p
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结）</title>
