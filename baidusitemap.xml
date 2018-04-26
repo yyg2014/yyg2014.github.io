@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yyg.wiki/2018/04/26/Nginx-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-nginx-conf-%E4%B8%AD%E6%96%87%E8%AF%A6%E8%A7%A3%EF%BC%88%E8%BD%AC%EF%BC%89/</loc>
+    <lastmod>2018-04-26T07:56:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx 配置文件 nginx.conf 中文详解（转）</title>
+        <pubTime>2018-04-26T07:54:18.000Z</pubTime>
+        
+        <tag>Nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="works" url="http://yyg.wiki/categories/works/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yyg.wiki/2018/04/26/Ubuntu%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4-%E4%B8%AA%E4%BA%BA%E5%B8%B8%E7%94%A8/</loc>
     <lastmod>2018-04-26T07:50:17.866Z</lastmod>
     <data>
@@ -73,11 +93,11 @@
         <title>LNMP环境搭建（Ubuntu14.04LTS+Nginx1.8.0+Mysql5.5.29+PHP5.6.13）原创 </title>
         <pubTime>2018-04-26T07:24:18.000Z</pubTime>
         
+        <tag>Nginx</tag>
+         
         <tag>Linux</tag>
          
         <tag>PHP</tag>
-         
-        <tag>Nginx</tag>
          
          
            
