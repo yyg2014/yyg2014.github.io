@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Ubuntu下常见压缩/解压缩文件命令 | Jason.Yang的博客</title>
-  <meta name="description" content="ZIPzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress  下面是如果解压">
+  <title>Linux各个分区的作用 | Jason.Yang的博客</title>
+  <meta name="description" content="Linux各个分区的作用 / 根目录，建议在根目录下面只有目录，不要直接有文件。 swap 交换空间，相当于Windows上的虚拟内存。 /boot 包含了操作系统的内核和在启动系统过程中所要用到的文件，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下常见压缩&#x2F;解压缩文件命令">
-<meta property="og:url" content="http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/index.html">
+<meta property="og:title" content="Linux各个分区的作用">
+<meta property="og:url" content="http://yyg.wiki/2018/04/26/Linux各个分区的作用/index.html">
 <meta property="og:site_name" content="Jason.Yang">
-<meta property="og:description" content="ZIPzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress  下面是如果解压">
+<meta property="og:description" content="Linux各个分区的作用 / 根目录，建议在根目录下面只有目录，不要直接有文件。 swap 交换空间，相当于Windows上的虚拟内存。 /boot 包含了操作系统的内核和在启动系统过程中所要用到的文件，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T02:20:32.000Z">
+<meta property="og:updated_time" content="2018-04-26T02:45:47.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下常见压缩&#x2F;解压缩文件命令">
-<meta name="twitter:description" content="ZIPzip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：我们可以使用下列的命令压缩一个目录： zip -r archive_name.zip directory_to_compress  下面是如果解压">
+<meta name="twitter:title" content="Linux各个分区的作用">
+<meta name="twitter:description" content="Linux各个分区的作用 / 根目录，建议在根目录下面只有目录，不要直接有文件。 swap 交换空间，相当于Windows上的虚拟内存。 /boot 包含了操作系统的内核和在启动系统过程中所要用到的文件，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/index.html">
+  <link rel="canonical" href="http://yyg.wiki/2018/04/26/Linux各个分区的作用/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Jason.Yang" type="application/atom+xml">
   
@@ -276,14 +276,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-Ubuntu下常见压缩-解压缩文件命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Linux各个分区的作用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Ubuntu下常见压缩/解压缩文件命令
+      Linux各个分区的作用
     </h1>
   
 
@@ -291,8 +291,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/" class="article-date">
-	  <time datetime="2018-04-26T02:14:15.000Z" itemprop="datePublished">2018-04-26</time>
+	<a href="/2018/04/26/Linux各个分区的作用/" class="article-date">
+	  <time datetime="2018-04-26T02:44:05.000Z" itemprop="datePublished">2018-04-26</time>
 	</a>
 </span>
         
@@ -310,41 +310,32 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/26/Linux各个分区的作用/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <h3 id="ZIP"><a href="#ZIP" class="headerlink" title="ZIP"></a>ZIP</h3><h5 id="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："><a href="#zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：" class="headerlink" title="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："></a>zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：</h5><h5 id="我们可以使用下列的命令压缩一个目录："><a href="#我们可以使用下列的命令压缩一个目录：" class="headerlink" title="我们可以使用下列的命令压缩一个目录："></a>我们可以使用下列的命令压缩一个目录：</h5><blockquote>
-<p>zip -r archive_name.zip directory_to_compress</p>
-</blockquote>
-<h5 id="下面是如果解压一个zip文档："><a href="#下面是如果解压一个zip文档：" class="headerlink" title="下面是如果解压一个zip文档："></a>下面是如果解压一个zip文档：</h5><blockquote>
-<p>unzip archive_name.zip</p>
-</blockquote>
-<h3 id="TAR"><a href="#TAR" class="headerlink" title="TAR"></a>TAR</h3><h4 id="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："><a href="#Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：" class="headerlink" title="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："></a>Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：</h4><blockquote>
-<p>tar -cvf archive_name.tar directory_to_compress</p>
-</blockquote>
-<h4 id="如何解包："><a href="#如何解包：" class="headerlink" title="如何解包："></a>如何解包：</h4><blockquote>
-<p>tar -xvf archive_name.tar.gz</p>
-</blockquote>
-<h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote>
-<p>tar -xvf archive_name.tar -C /tmp/extract_here/</p>
-</blockquote>
-<h3 id="TAR-GZ"><a href="#TAR-GZ" class="headerlink" title="TAR.GZ"></a>TAR.GZ</h3><h5 id="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："><a href="#这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：" class="headerlink" title="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："></a>这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：</h5><blockquote>
-<p>tar -zcvf archive_name.tar.gz directory_to_compress</p>
-</blockquote>
-<h5 id="解压缩："><a href="#解压缩：" class="headerlink" title="解压缩："></a>解压缩：</h5><blockquote>
-<p>tar -zxvf archive_name.tar.gz</p>
-</blockquote>
-<h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote>
-<p>tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</p>
-</blockquote>
-<h3 id="TAR-BZ2"><a href="#TAR-BZ2" class="headerlink" title="TAR.BZ2"></a>TAR.BZ2</h3><h5 id="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。"><a href="#这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。" class="headerlink" title="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。"></a>这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。</h5><blockquote>
-<p>tar -jcvf archive_name.tar.bz2 directory_to_compress</p>
-</blockquote>
-<h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote>
-<p>tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</p>
+        <h2 id="Linux各个分区的作用"><a href="#Linux各个分区的作用" class="headerlink" title="Linux各个分区的作用"></a>Linux各个分区的作用</h2><blockquote>
+<p><strong>/ 根目录</strong>，建议在根目录下面只有目录，不要直接有文件。</p>
+<p><strong>swap 交换空间</strong>，相当于Windows上的虚拟内存。</p>
+<p><strong>/boot 包含了操作系统的内核和在启动系统过程中所要用到的文件</strong>，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB之间。</p>
+<p><strong>/home 用户的home目录所在地</strong>，这个分区的大小取决于有多少用户。如果是多用户共同使用一台电脑的话，这个分区是完全有必要的，况且根用户也可以很好地控制普通用户使用计算机，如对用户或者用户组实行硬盘限量使用，限制普通用户访问哪些文件等。</p>
+<p><strong>/tmp 用来存放临时文件</strong>。这对于多用户系统或者网络服务器来说是有必要的。这样即使程序运行时生成大量的临时文件，或者用户对系统进行了错误的操作，文件系统的其它部分仍然是安全的。因为文件系统的这一部分仍然还承受着读写操作，所以它通常会比其它的部分更快地发生问题。这个目录是任何人都能访问的，所以需要定期清理。</p>
+<p><strong>/usr Linux系统存放软件的地方</strong>，如有可能应将最大空间分给它。</p>
+<p><strong>/bin<br>/usr/bin<br>/usr/local/bin 存放标准系统实用程序。</strong></p>
+<p><strong>/srv 一些服务启动之后，这些服务所需要访问的数据目录</strong>，如WWW服务器需要的网页数据就可以放在/srv/www中。</p>
+<p><strong>/etc 系统主要的设置文件几乎都放在这个目录内</strong>。</p>
+<p><strong>/lib<br>/usr/lib<br>/usr/local/lib 系统使用的函数库的目录。</strong></p>
+<p><strong>/root 系统管理员的家目录。</strong></p>
+<p><strong>/lost+found 该目录在大多数情况下都是空的</strong>，但当实然停电或者非正常关机后，有些文件临时存入在此。</p>
+<p><strong>/dev 设备文件</strong>，在Linux系统上，任何设备都以文件类型存放在这个目录中，如硬盘设备文件，软驱、光驱设备文件等。</p>
+<p><strong>/mnt<br>/media 挂载目录，用来临时挂载别的文件系统或者别的硬件设备（如光驱、软驱）。</strong></p>
+<p><strong>/opt 用于存储第三方软件的目录</strong>，不过我们还是习惯放在/usr/local下。</p>
+<p><strong>/proc 此目录信息是在内存中由系统自行产生的</strong>，存储了一些当前的进程ID号和CPU、内存的映射等，因为这个目录下的数据都在内存中，所以本身不占任何硬盘空间。</p>
+<p><strong>/sbin<br>/usr/sbin<br>/usr/local/sbin 存放一些系统管理员才会用到的执行命令。</strong></p>
+<p><strong>/var 主要放置系统执行过程中经常变化的文件</strong>，例如缓存（cache）或者是随时更改的登录文件（log file）。</p>
+<p><strong>/var/log 系统日志记录分区</strong>，如果设立了这一单独的分区，这样即使系统的日志文件出现了问题，它们也不会影响到操作系统的主分区。</p>
 </blockquote>
 
       
@@ -355,7 +346,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/" title="Ubuntu下常见压缩/解压缩文件命令" target="_blank" rel="external">http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/</a>
+      <a href="http://yyg.wiki/2018/04/26/Linux各个分区的作用/" title="Linux各个分区的作用" target="_blank" rel="external">http://yyg.wiki/2018/04/26/Linux各个分区的作用/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -403,13 +394,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/04/26/Linux各个分区的作用/" title="Linux各个分区的作用"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2018/04/24/Linux下-dev-shm-目录作用/" title="Linux下 /dev/shm 目录作用"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/" title="Ubuntu下常见压缩/解压缩文件命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

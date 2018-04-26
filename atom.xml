@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yyg.wiki/"/>
-  <updated>2018-04-26T02:20:32.000Z</updated>
+  <updated>2018-04-26T02:45:47.093Z</updated>
   <id>http://yyg.wiki/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux各个分区的作用</title>
+    <link href="http://yyg.wiki/2018/04/26/Linux%E5%90%84%E4%B8%AA%E5%88%86%E5%8C%BA%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
+    <id>http://yyg.wiki/2018/04/26/Linux各个分区的作用/</id>
+    <published>2018-04-26T02:44:05.000Z</published>
+    <updated>2018-04-26T02:45:47.093Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Linux各个分区的作用"><a href="#Linux各个分区的作用" class="headerlink" title="Linux各个分区的作用"></a>Linux各个分区的作用</h2><blockquote><p><strong>/ 根目录</strong>，建议在根目录下面只有目录，不要直接有文件。</p><p><strong>swap 交换空间</strong>，相当于Windows上的虚拟内存。</p><p><strong>/boot 包含了操作系统的内核和在启动系统过程中所要用到的文件</strong>，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB之间。</p><p><strong>/home 用户的home目录所在地</strong>，这个分区的大小取决于有多少用户。如果是多用户共同使用一台电脑的话，这个分区是完全有必要的，况且根用户也可以很好地控制普通用户使用计算机，如对用户或者用户组实行硬盘限量使用，限制普通用户访问哪些文件等。</p><p><strong>/tmp 用来存放临时文件</strong>。这对于多用户系统或者网络服务器来说是有必要的。这样即使程序运行时生成大量的临时文件，或者用户对系统进行了错误的操作，文件系统的其它部分仍然是安全的。因为文件系统的这一部分仍然还承受着读写操作，所以它通常会比其它的部分更快地发生问题。这个目录是任何人都能访问的，所以需要定期清理。</p><p><strong>/usr Linux系统存放软件的地方</strong>，如有可能应将最大空间分给它。</p><p><strong>/bin<br>/usr/bin<br>/usr/local/bin 存放标准系统实用程序。</strong></p><p><strong>/srv 一些服务启动之后，这些服务所需要访问的数据目录</strong>，如WWW服务器需要的网页数据就可以放在/srv/www中。</p><p><strong>/etc 系统主要的设置文件几乎都放在这个目录内</strong>。</p><p><strong>/lib<br>/usr/lib<br>/usr/local/lib 系统使用的函数库的目录。</strong></p><p><strong>/root 系统管理员的家目录。</strong></p><p><strong>/lost+found 该目录在大多数情况下都是空的</strong>，但当实然停电或者非正常关机后，有些文件临时存入在此。</p><p><strong>/dev 设备文件</strong>，在Linux系统上，任何设备都以文件类型存放在这个目录中，如硬盘设备文件，软驱、光驱设备文件等。</p><p><strong>/mnt<br>/media 挂载目录，用来临时挂载别的文件系统或者别的硬件设备（如光驱、软驱）。</strong></p><p><strong>/opt 用于存储第三方软件的目录</strong>，不过我们还是习惯放在/usr/local下。</p><p><strong>/proc 此目录信息是在内存中由系统自行产生的</strong>，存储了一些当前的进程ID号和CPU、内存的映射等，因为这个目录下的数据都在内存中，所以本身不占任何硬盘空间。</p><p><strong>/sbin<br>/usr/sbin<br>/usr/local/sbin 存放一些系统管理员才会用到的执行命令。</strong></p><p><strong>/var 主要放置系统执行过程中经常变化的文件</strong>，例如缓存（cache）或者是随时更改的登录文件（log file）。</p><p><strong>/var/log 系统日志记录分区</strong>，如果设立了这一单独的分区，这样即使系统的日志文件出现了问题，它们也不会影响到操作系统的主分区。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Linux各个分区的作用&quot;&gt;&lt;a href=&quot;#Linux各个分区的作用&quot; class=&quot;headerlink&quot; title=&quot;Linux各个分区的作用&quot;&gt;&lt;/a&gt;Linux各个分区的作用&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;/ 根目录&lt;/st
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu下常见压缩/解压缩文件命令</title>
