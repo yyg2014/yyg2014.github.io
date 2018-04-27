@@ -18,20 +18,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档: 2018/4 | 杨雨庚的博客</title>
-  <meta name="description" content="杨雨庚的博客--点滴成长">
-<meta name="keywords" content="杨雨庚的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨雨庚的博客">
-<meta property="og:url" content="http://yyg.wiki/archives/2018/04/index.html">
+  <title>Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法  | 杨雨庚的博客</title>
+  <meta name="description" content="在尝试搭建新版本的lnmp环境后发现一个问题：php脚本中的语法错误会导致Nginx服务器直接返回状态码500；查看相关资料后解决办法很简单。方法如下:因为Nginx服务器是通过fastcgi与php进行通信的，所以如果在php的配置文件中disable_error=false;(php7以下版本)的话就会导致服务器直接返回500错误。在php 7.0.5中的配置参数有略微变化;php_flag[">
+<meta name="keywords" content="Nginx,PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法 ">
+<meta property="og:url" content="http://yyg.wiki/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="杨雨庚的博客--点滴成长">
+<meta property="og:description" content="在尝试搭建新版本的lnmp环境后发现一个问题：php脚本中的语法错误会导致Nginx服务器直接返回状态码500；查看相关资料后解决办法很简单。方法如下:因为Nginx服务器是通过fastcgi与php进行通信的，所以如果在php的配置文件中disable_error=false;(php7以下版本)的话就会导致服务器直接返回500错误。在php 7.0.5中的配置参数有略微变化;php_flag[">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-27T00:48:36.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨雨庚的博客">
-<meta name="twitter:description" content="杨雨庚的博客--点滴成长">
+<meta name="twitter:title" content="Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法 ">
+<meta name="twitter:description" content="在尝试搭建新版本的lnmp环境后发现一个问题：php脚本中的语法错误会导致Nginx服务器直接返回状态码500；查看相关资料后解决办法很简单。方法如下:因为Nginx服务器是通过fastcgi与php进行通信的，所以如果在php的配置文件中disable_error=false;(php7以下版本)的话就会导致服务器直接返回500错误。在php 7.0.5中的配置参数有略微变化;php_flag[">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/archives/2018/04/index.html">
+  <link rel="canonical" href="http://yyg.wiki/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/index.html">
   
     <link rel="alternate" href="/atom.xml" title="杨雨庚的博客" type="application/atom+xml">
   
@@ -298,164 +299,173 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2018/4</h1>
-	      <p class="text-muted">共 10 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法 
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2018" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2018
-            </a>
-            <!-- <a href="/archives/2018" class="archive-year">2018</a> -->
-          </h3>
-        </div>
-        <div id="collapse2018" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2018">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-27T00:47:42.000Z" itemprop="datePublished">2018-04-27</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法 
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/" class="article-date">
+	  <time datetime="2018-04-27T00:47:42.000Z" itemprop="datePublished">2018-04-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/works/">works</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Nginx/">Nginx</a>, <a class="article-tag-link" href="/tags/PHP/">PHP</a>
+  </span>
 
 
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h2 id="在尝试搭建新版本的lnmp环境后发现一个问题："><a href="#在尝试搭建新版本的lnmp环境后发现一个问题：" class="headerlink" title="在尝试搭建新版本的lnmp环境后发现一个问题："></a>在尝试搭建新版本的lnmp环境后发现一个问题：</h2><p>php脚本中的语法错误会导致Nginx服务器直接返回状态码500；查看相关资料后解决办法很简单。<br>方法如下:<br>因为Nginx服务器是通过fastcgi与php进行通信的，所以如果在php的配置文件中<code>disable_error=false;</code>(php7以下版本)的话就会导致服务器直接返回500错误。<br>在php 7.0.5中的配置参数有略微变化<code>;php_flag[display_errors] = off</code>默认设置是并未开启状态 而且默认值是<code>off</code> 将前面注释的分号去掉并修改<code>off</code>为<code>on</code> 然后重新启动php-fpm后问题解决</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yyg.wiki/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/" title="Nginx 1.8.1 + PHP 7.0.5 环境下PHP语法错误导致服务器报500错误解决办法 " target="_blank" rel="external">http://yyg.wiki/2018/04/27/Nginx-1-8-1-PHP-7-0-5-环境下PHP语法错误导致服务器报500错误解决办法/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yyg2014" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/logo.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yyg2014" target="_blank"><span class="text-dark">Jason.Yang</span><small class="ml-1x">Freedom dream originality music and a little of flowers</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-27T00:45:51.000Z" itemprop="datePublished">2018-04-27</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> MySQL 5.7.11编译安装过程记录（个人开发级别 原创）
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/27/Linux-passwd文件格式解析/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-27T00:41:39.000Z" itemprop="datePublished">2018-04-27</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Linux passwd文件格式解析
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T08:07:06.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/Fastcgi-params-与-Fastcgi-conf-Nginx-配置的历史（译）/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T08:02:03.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Fastcgi_params 与 Fastcgi.conf --Nginx 配置的历史（译）
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/ECMALL-session跨域实现解析-原创/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:58:33.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> ECMALL session跨域实现解析 原创
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/Nginx-配置文件-nginx-conf-中文详解（转）/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:54:18.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Nginx 配置文件 nginx.conf 中文详解（转）
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/Ubuntu常用操作命令-个人常用/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:49:37.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Ubuntu常用操作命令(个人常用)
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/浅析PHP中STATIC、CONST、-DEFINE的区别（归纳总结）/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:43:50.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结）
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/常用的BASH快捷命令/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:39:56.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 常用的BASH快捷命令
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+       
+    <div id="uyan_frame"></div>
+
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/archives/2018/04/page/2/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 1 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" title="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/zfb.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechat.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -503,6 +513,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 
