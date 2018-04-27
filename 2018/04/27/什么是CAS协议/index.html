@@ -18,20 +18,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档 | 杨雨庚的博客</title>
-  <meta name="description" content="杨雨庚的博客--点滴成长">
-<meta name="keywords" content="杨雨庚的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="杨雨庚的博客">
-<meta property="og:url" content="http://yyg.wiki/archives/page/2/index.html">
+  <title>什么是CAS协议 | 杨雨庚的博客</title>
+  <meta name="description" content="什么是CAS协议Memcached于1.2.4版本新增CAS(Check and Set)协议类同于Java并发的CAS(Compare and Swap)原子操作，处理同一item被多个线程更改过程的并发问题。  在Memcached中，每个key关联有一个64-bit长度的long型惟一数值，表示该key对应value的版本号。这个数值由Memcached server产生，从1开始，且同一M">
+<meta name="keywords" content="Memcache">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是CAS协议">
+<meta property="og:url" content="http://yyg.wiki/2018/04/27/什么是CAS协议/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="杨雨庚的博客--点滴成长">
+<meta property="og:description" content="什么是CAS协议Memcached于1.2.4版本新增CAS(Check and Set)协议类同于Java并发的CAS(Compare and Swap)原子操作，处理同一item被多个线程更改过程的并发问题。  在Memcached中，每个key关联有一个64-bit长度的long型惟一数值，表示该key对应value的版本号。这个数值由Memcached server产生，从1开始，且同一M">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-27T02:06:20.391Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杨雨庚的博客">
-<meta name="twitter:description" content="杨雨庚的博客--点滴成长">
+<meta name="twitter:title" content="什么是CAS协议">
+<meta name="twitter:description" content="什么是CAS协议Memcached于1.2.4版本新增CAS(Check and Set)协议类同于Java并发的CAS(Compare and Swap)原子操作，处理同一item被多个线程更改过程的并发问题。  在Memcached中，每个key关联有一个64-bit长度的long型惟一数值，表示该key对应value的版本号。这个数值由Memcached server产生，从1开始，且同一M">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/archives/page/2/index.html">
+  <link rel="canonical" href="http://yyg.wiki/2018/04/27/什么是CAS协议/index.html">
   
     <link rel="alternate" href="/atom.xml" title="杨雨庚的博客" type="application/atom+xml">
   
@@ -298,144 +299,181 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档</h1>
-	      <p class="text-muted">共 8 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-什么是CAS协议" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      什么是CAS协议
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2018" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2018
-            </a>
-            <!-- <a href="/archives/2018" class="archive-year">2018</a> -->
-          </h3>
-        </div>
-        <div id="collapse2018" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2018">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2018/04/26/Ubuntu常用操作命令-个人常用/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:49:37.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Ubuntu常用操作命令(个人常用)
-</a>
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/27/什么是CAS协议/" class="article-date">
+	  <time datetime="2018-04-27T02:05:45.000Z" itemprop="datePublished">2018-04-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/works/">works</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Memcache/">Memcache</a>
+  </span>
 
 
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/27/什么是CAS协议/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <h3 id="什么是CAS协议"><a href="#什么是CAS协议" class="headerlink" title="什么是CAS协议"></a>什么是CAS协议</h3><p>Memcached于1.2.4版本新增CAS(Check and Set)协议类同于Java并发的CAS(Compare and Swap)原子操作，处理同一item被多个线程更改过程的并发问题。 </p>
+<p>在Memcached中，每个key关联有一个64-bit长度的long型惟一数值，表示该key对应value的版本号。这个数值由Memcached server产生，从1开始，且同一Memcached server不会重复。在两种情况下这个版本数值会加1：1、新增一个key-value对；2、对某已有key对应的value值更新成功。删除item版本值不会减小。 </p>
+<h3 id="CAS协议解决的问题"><a href="#CAS协议解决的问题" class="headerlink" title="CAS协议解决的问题"></a>CAS协议解决的问题</h3><p>模拟多个Memcached client并发set同一个key的场景。如clientA想把当前key的value set为”x”，且操作成功；clientB却把当前key的value值由”x”覆盖set为”y”，这时clientA再根据key去取value时得到”y”而不是期望的”x”，它使用这个值，但不知道这个值已经被其它线程修改过，就可能会出现问题。 </p>
+<p>CAS协议解决这种并发修改问题。有线程试图修改当前key-value对的value时，先由gets方法得到item的版本号，操作完成提交数据时，使用cas方法谨慎变更，如果在本地对item操作过程中这个key-value对在Memcached server端被其它线程更改过，就放弃此次修改(乐观锁概念)。 </p>
+<p>在我取数据时item的版本号是casValue.getCas()，所以提交时我期望item的版本号是没有改变过的。如果被修改过，不是我取数据时的版本号，那么Memcached server对这次提交什么也不做，返回true或false由用户自己来提出解决方案(什么也不做或是重新获取版本号，再次重试提交等)  </p>
+<p>并发环境下的正确性验证 </p>
+<p>用多个Memcached client并发更改同一个key值，将value递增，如果  操作次数-CAS失败次数 = value增加的值，表示并发环境下CAS处理没有问题。 </p>
+<p>每次执行的结果都会不一样，如其中某次的执行结果为: 总共操作100次，冲突47次，且最后value由1涨到53，那么表示验证成功。 </p>
+<p>转自<a href="http://langyu.iteye.com/blog/680052" target="_blank" rel="noopener">http://langyu.iteye.com/blog/680052</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yyg.wiki/2018/04/27/什么是CAS协议/" title="什么是CAS协议" target="_blank" rel="external">http://yyg.wiki/2018/04/27/什么是CAS协议/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yyg2014" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/logo.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yyg2014" target="_blank"><span class="text-dark">Jason.Yang</span><small class="ml-1x">Freedom dream originality music and a little of flowers</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
-    
-    
-<a href="/2018/04/26/浅析PHP中STATIC、CONST、-DEFINE的区别（归纳总结）/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:43:50.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 浅析PHP中STATIC、CONST、 DEFINE的区别（归纳总结）
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/常用的BASH快捷命令/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:39:56.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 常用的BASH快捷命令
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/git创建与删除分支/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:31:19.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> git创建与删除分支
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/LNMP环境搭建（Ubuntu14-04LTS-Nginx1-8-0-Mysql5-5-29-PHP5-6-13）原创/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T07:24:18.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> LNMP环境搭建（Ubuntu14.04LTS+Nginx1.8.0+Mysql5.5.29+PHP5.6.13）原创 
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/Linux各个分区的作用/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T02:44:05.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Linux各个分区的作用
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-26T02:14:15.000Z" itemprop="datePublished">2018-04-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Ubuntu下常见压缩/解压缩文件命令
-</a>
-
-
-  
-    
-    
-    
-<a href="/2018/04/24/Linux下-dev-shm-目录作用/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2018-04-24T09:22:37.000Z" itemprop="datePublished">2018-04-24</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Linux下 /dev/shm 目录作用
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
+  <section id="comments">
   	
+       
+    <div id="uyan_frame"></div>
+
     
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev">
-                <a href="/archives/">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next disabled">
-                <a href="javascript:;">
-                    下一页
-                    <i class="icon icon-angle-right"></i>                    
-                </a>
-            </li>
-            
-        </ul>
-        <div class="total-article bar-right">Page 2 of 2</div>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/" title="PHP7.1.0 安装 redis 以及 php-redis扩展"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/zfb.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechat.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 	
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -483,6 +521,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
     
     
 
