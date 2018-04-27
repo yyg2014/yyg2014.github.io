@@ -18,21 +18,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>PHP7.1.0 安装 redis 以及 php-redis扩展 | 杨雨庚的博客</title>
-  <meta name="description" content="今日安装 PHP7.1.0 以后 需要重新安装 redis 以及 php-redis扩展，做记录以备忘。到redis官网下载 redis 3.2.6 后解压到指定目录阅读README文件后发现 redis已经是configure好的  直接运行 make install 就可以。安装成功以后 跟据README文件知道  可以直接运行/untis/install_server.sh进行后续的配置可以">
-<meta name="keywords" content="PHP,Redis">
+  <title>Svn st 状态解析 | 杨雨庚的博客</title>
+  <meta name="description" content="SVN状态表svn st –help status (stat, st): 显示工作副本中目录与文件的状态。用法: status [PATH…]   未指定参数时，只显示本地修改的条目(没有网络访问)。  使用 -q 时，只显示本地修改条目的摘要信息。  使用 -u 时，增加工作版本和服务器上版本过期信息。  使用 -v 时，显示每个条目的完整版本信息。   输出的前七栏各占一个字符宽度:">
+<meta name="keywords" content="SVN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP7.1.0 安装 redis 以及 php-redis扩展">
-<meta property="og:url" content="http://yyg.wiki/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/index.html">
+<meta property="og:title" content="Svn st 状态解析">
+<meta property="og:url" content="http://yyg.wiki/2018/04/27/Svn-st-状态解析/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="今日安装 PHP7.1.0 以后 需要重新安装 redis 以及 php-redis扩展，做记录以备忘。到redis官网下载 redis 3.2.6 后解压到指定目录阅读README文件后发现 redis已经是configure好的  直接运行 make install 就可以。安装成功以后 跟据README文件知道  可以直接运行/untis/install_server.sh进行后续的配置可以">
+<meta property="og:description" content="SVN状态表svn st –help status (stat, st): 显示工作副本中目录与文件的状态。用法: status [PATH…]   未指定参数时，只显示本地修改的条目(没有网络访问)。  使用 -q 时，只显示本地修改条目的摘要信息。  使用 -u 时，增加工作版本和服务器上版本过期信息。  使用 -v 时，显示每个条目的完整版本信息。   输出的前七栏各占一个字符宽度:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-27T02:03:01.000Z">
+<meta property="og:updated_time" content="2018-04-27T02:11:31.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP7.1.0 安装 redis 以及 php-redis扩展">
-<meta name="twitter:description" content="今日安装 PHP7.1.0 以后 需要重新安装 redis 以及 php-redis扩展，做记录以备忘。到redis官网下载 redis 3.2.6 后解压到指定目录阅读README文件后发现 redis已经是configure好的  直接运行 make install 就可以。安装成功以后 跟据README文件知道  可以直接运行/untis/install_server.sh进行后续的配置可以">
+<meta name="twitter:title" content="Svn st 状态解析">
+<meta name="twitter:description" content="SVN状态表svn st –help status (stat, st): 显示工作副本中目录与文件的状态。用法: status [PATH…]   未指定参数时，只显示本地修改的条目(没有网络访问)。  使用 -q 时，只显示本地修改条目的摘要信息。  使用 -u 时，增加工作版本和服务器上版本过期信息。  使用 -v 时，显示每个条目的完整版本信息。   输出的前七栏各占一个字符宽度:">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/index.html">
+  <link rel="canonical" href="http://yyg.wiki/2018/04/27/Svn-st-状态解析/index.html">
   
     <link rel="alternate" href="/atom.xml" title="杨雨庚的博客" type="application/atom+xml">
   
@@ -300,14 +300,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PHP7-1-0-安装-redis-以及-php-redis扩展" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Svn-st-状态解析" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      PHP7.1.0 安装 redis 以及 php-redis扩展
+      Svn st 状态解析
     </h1>
   
 
@@ -315,33 +315,44 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/" class="article-date">
-	  <time datetime="2018-04-27T02:01:16.000Z" itemprop="datePublished">2018-04-27</time>
+	<a href="/2018/04/27/Svn-st-状态解析/" class="article-date">
+	  <time datetime="2018-04-27T02:10:53.000Z" itemprop="datePublished">2018-04-27</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/works/">works</a>
+  </span>
+
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/PHP/">PHP</a>, <a class="article-tag-link" href="/tags/Redis/">Redis</a>
+	<a class="article-tag-link" href="/tags/SVN/">SVN</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/27/Svn-st-状态解析/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>今日安装 PHP7.1.0 以后 需要重新安装 redis 以及 php-redis扩展，做记录以备忘。<br>到redis官网下载 redis 3.2.6 后解压到指定目录<br>阅读README文件后发现 redis已经是configure好的  直接运行 make install 就可以。<br>安装成功以后 跟据README文件知道  可以直接运行/untis/install_server.sh进行后续的配置<br>可以设置端口 log日志 数据保存位置 配置文件等选项<br>设置完毕以后自动启动服务信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Selected config:</span><br><span class="line">Port           : 6379</span><br><span class="line">Config file    : /etc/redis.conf</span><br><span class="line">Log file       : /usr/local/lnmp/redis/log/redis_6379.log</span><br><span class="line">Data dir       : /usr/local/lnmp/redis/6379</span><br><span class="line">Executable     : /usr/local/bin/redis-server</span><br><span class="line">Cli Executable : /usr/local/bin/redis-cli</span><br><span class="line">Is this ok? Then press ENTER to go on or Ctrl-C to abort.</span><br><span class="line">Copied /tmp/6379.conf =&gt; /etc/init.d/redis_6379</span><br><span class="line">Installing service...</span><br><span class="line">Success!</span><br><span class="line">Starting Redis server...</span><br><span class="line">Installation successful!</span><br></pre></td></tr></table></figure></p>
-<p>redis安装完毕！！！</p>
-<p>PHP-redis扩展安装：<br>到<a href="http://pecl.php.net搜索最新的php-redis扩展" target="_blank" rel="noopener">http://pecl.php.net搜索最新的php-redis扩展</a><br>解压到指定目录后</p>
-<blockquote>
-<p>sudo ./configure –with-php-config=/usr/local/lnmp/php/bin/php-config<br>sudo make &amp;&amp; sudo make install<br>得到生成的.so文件位置<br>/usr/local/lnmp/php/lib/php/extensions/no-debug-non-zts-20160303/redis.so</p>
-</blockquote>
-<p>修改php.ini 完毕！</p>
+        <h2 id="SVN状态表"><a href="#SVN状态表" class="headerlink" title="SVN状态表"></a>SVN状态表</h2><p>svn st –help</p>
+<p>status (stat, st): 显示工作副本中目录与文件的状态。<br>用法: status [PATH…]</p>
+<p>  未指定参数时，只显示本地修改的条目(没有网络访问)。<br>  使用 -q 时，只显示本地修改条目的摘要信息。<br>  使用 -u 时，增加工作版本和服务器上版本过期信息。<br>  使用 -v 时，显示每个条目的完整版本信息。</p>
+<p>  输出的前七栏各占一个字符宽度:<br>    第一栏: 表示一个项目是增加、删除，还是修改<br>      “ ” 无修改<br>      “A” 增加<br>      “C” 冲突<br>      “D” 删除<br>      “I” 忽略<br>      “M” 改变<br>      “R” 替换<br>      “X” 未纳入版本控制的目录，被外部引用的目录所创建<br>      “?” 未纳入版本控制<br>      “!” 该项目已遗失(被非 svn 命令删除)或不完整<br>      “~” 版本控制下的项目与其它类型的项目重名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &quot;G&quot; 与 &quot;U&quot;的区别:</span><br><span class="line"> 举例:甲乙同时从版本库里面checkout出来相同的版本 A的X文件 </span><br><span class="line"> 此时，甲没有修改X，乙修改并提交了X，那么如果甲做Update，那么X的文件状态就是U [update]    更新</span><br><span class="line">相反，如果甲对X进行了修改，乙进行了修改且提交，此时甲做Update，那么X文件的状态就是G ［merge合并］</span><br></pre></td></tr></table></figure>
+<p>——将甲本地修改的版本和乙修改提交的版本进行合并</p>
+<p>第二栏: 显示目录或文件的属性状态<br>      “ ” 无修改<br>      “C” 冲突<br>      “M” 改变<br>    第三栏: 工作副本目录是否被锁定<br>      “ ” 未锁定<br>      “L” 锁定<br>    第四栏: 已调度的提交是否包含副本历史<br>      “ ” 没有历史<br>      “+” 包含历史<br>    第五栏: 该条目相对其父目录是否已切换，或者是外部引用的文件<br>      “ ” 正常<br>      “S” 已切换<br>      “X” 被外部引用创建的文件<br>    第六栏: 版本库锁定标记<br>      (没有 -u)<br>      “ ” 没有锁定标记<br>      “K” 存在锁定标记<br>      (使用 -u)<br>      “ ” 没有在版本库中锁定，没有锁定标记<br>      “K” 在版本库中被锁定，存在锁定标记<br>      “O” 在版本库中被锁定，锁定标记在一些其他工作副本中<br>      “T” 在版本库中被锁定，存在锁定标记但已被窃取<br>      “B” 没有在版本库中被锁定，存在锁定标记但已被破坏<br>    第七栏: 项目冲突标记<br>      “ ” 正常<br>      “C” 树冲突<br>    如果项目包含于树冲突之中，在项目状态行后会附加行，说明冲突的种类。</p>
+<p>  是否过期的信息出现的位置是第九栏(与 -u 并用时):<br>      “*” 服务器上有更新版本<br>      “ ” 工作副本是最新版的</p>
+<p>  剩余的栏位皆为变动宽度，并以空白隔开:<br>    工作版本号(使用 -u 或 -v 时)<br>    最后提交的版本与最后提交的作者(使用 -v 时)<br>    工作副本路径总是最后一栏，所以它可以包含空白字符。</p>
+<p>  范例输出:<br>    svn status wc<br>     M     wc/bar.c<br>    A  +   wc/qax.c</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">svn status -u wc</span><br><span class="line"> M           965    wc/bar.c</span><br><span class="line">       *     965    wc/foo.c</span><br><span class="line">A  +         965    wc/qax.c</span><br><span class="line">Status against revision:   981</span><br><span class="line"></span><br><span class="line">svn status --show-updates --verbose wc</span><br><span class="line"> M           965       938 kfogel       wc/bar.c</span><br><span class="line">       *     965       922 sussman      wc/foo.c</span><br><span class="line">A  +         965       687 joe          wc/qax.c</span><br><span class="line">             965       687 joe          wc/zig.c</span><br><span class="line">Status against revision:   981</span><br><span class="line"></span><br><span class="line">svn status</span><br><span class="line"> M      wc/bar.c</span><br><span class="line">!     C wc/qaz.c</span><br><span class="line">      &gt;   local missing, incoming edit upon update</span><br><span class="line">D       wc/qax.c</span><br></pre></td></tr></table></figure>
+<p>有效选项:<br>  -u [–show-updates]      : 显示更新信息<br>  -v [–verbose]           : 打印附加信息<br>  -N [–non-recursive]     : 过时；尝试 –depth=files 或 –depth=immediates<br>  –depth ARG              : 受深度参数 ARG(“empty”，“files”，“immediates”，或“infinity”) 约束的操作<br>  -q [–quiet]             : 不打印信息，或只打印概要信息<br>  –no-ignore              : 忽略默认值和 svn:ignore 属性<br>  –incremental            : 给予适合串联的输出<br>  –xml                    : 输出为 XML<br>  –ignore-externals       : 忽略外部项目<br>  –changelist ARG         : 只能对修改列表 ARG 成员操作<br>                             [aliases: –cl]</p>
+<p>全局选项:<br>  –username ARG           : 指定用户名称 ARG<br>  –password ARG           : 指定密码 ARG<br>  –no-auth-cache          : 不要缓存用户认证令牌<br>  –non-interactive        : 不要交互提示<br>  –trust-server-cert      : 不提示的接受未知的 SSL 服务器证书(只用于选项 “–non-interactive”)<br>  –config-dir ARG         : 从目录 ARG 读取用户配置文件<br>  –config-option ARG      : 以下属格式设置用户配置选项：<br>                                 FILE:SECTION:OPTION=[VALUE]<br>                             例如：<br>                                 servers:global:http-library=serf</p>
 
       
     </div>
@@ -351,7 +362,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yyg.wiki/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/" title="PHP7.1.0 安装 redis 以及 php-redis扩展" target="_blank" rel="external">http://yyg.wiki/2018/04/27/PHP7-1-0-安装-redis-以及-php-redis扩展/</a>
+      <a href="http://yyg.wiki/2018/04/27/Svn-st-状态解析/" title="Svn st 状态解析" target="_blank" rel="external">http://yyg.wiki/2018/04/27/Svn-st-状态解析/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -399,13 +410,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/04/27/什么是CAS协议/" title="什么是CAS协议"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2018/04/27/Ubuntu16-04-1LTS-下PHP7-1-0编译安装时提示-Makefile-288-recipe-for-target-sapi-cli-php-failed-及-undefined-reference-to-XpmLibraryVersion-错误解决-原创/" title="Ubuntu16.04.1LTS 下PHP7.1.0编译安装时提示 Makefile:288: recipe for target &#39;sapi/cli/php&#39; failed 及 undefined reference to &#39;XpmLibraryVersion&#39;错误解决(原创)"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/04/27/UML中的关系/" title="UML中的关系"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

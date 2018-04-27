@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yyg.wiki/"/>
-  <updated>2018-04-27T02:09:15.000Z</updated>
+  <updated>2018-04-27T02:11:31.096Z</updated>
   <id>http://yyg.wiki/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Svn st 状态解析</title>
+    <link href="http://yyg.wiki/2018/04/27/Svn-st-%E7%8A%B6%E6%80%81%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yyg.wiki/2018/04/27/Svn-st-状态解析/</id>
+    <published>2018-04-27T02:10:53.000Z</published>
+    <updated>2018-04-27T02:11:31.096Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="SVN状态表"><a href="#SVN状态表" class="headerlink" title="SVN状态表"></a>SVN状态表</h2><p>svn st –help</p><p>status (stat, st): 显示工作副本中目录与文件的状态。<br>用法: status [PATH…]</p><p>  未指定参数时，只显示本地修改的条目(没有网络访问)。<br>  使用 -q 时，只显示本地修改条目的摘要信息。<br>  使用 -u 时，增加工作版本和服务器上版本过期信息。<br>  使用 -v 时，显示每个条目的完整版本信息。</p><p>  输出的前七栏各占一个字符宽度:<br>    第一栏: 表示一个项目是增加、删除，还是修改<br>      “ ” 无修改<br>      “A” 增加<br>      “C” 冲突<br>      “D” 删除<br>      “I” 忽略<br>      “M” 改变<br>      “R” 替换<br>      “X” 未纳入版本控制的目录，被外部引用的目录所创建<br>      “?” 未纳入版本控制<br>      “!” 该项目已遗失(被非 svn 命令删除)或不完整<br>      “~” 版本控制下的项目与其它类型的项目重名</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &quot;G&quot; 与 &quot;U&quot;的区别:</span><br><span class="line"> 举例:甲乙同时从版本库里面checkout出来相同的版本 A的X文件 </span><br><span class="line"> 此时，甲没有修改X，乙修改并提交了X，那么如果甲做Update，那么X的文件状态就是U [update]    更新</span><br><span class="line">相反，如果甲对X进行了修改，乙进行了修改且提交，此时甲做Update，那么X文件的状态就是G ［merge合并］</span><br></pre></td></tr></table></figure><p>——将甲本地修改的版本和乙修改提交的版本进行合并</p><p>第二栏: 显示目录或文件的属性状态<br>      “ ” 无修改<br>      “C” 冲突<br>      “M” 改变<br>    第三栏: 工作副本目录是否被锁定<br>      “ ” 未锁定<br>      “L” 锁定<br>    第四栏: 已调度的提交是否包含副本历史<br>      “ ” 没有历史<br>      “+” 包含历史<br>    第五栏: 该条目相对其父目录是否已切换，或者是外部引用的文件<br>      “ ” 正常<br>      “S” 已切换<br>      “X” 被外部引用创建的文件<br>    第六栏: 版本库锁定标记<br>      (没有 -u)<br>      “ ” 没有锁定标记<br>      “K” 存在锁定标记<br>      (使用 -u)<br>      “ ” 没有在版本库中锁定，没有锁定标记<br>      “K” 在版本库中被锁定，存在锁定标记<br>      “O” 在版本库中被锁定，锁定标记在一些其他工作副本中<br>      “T” 在版本库中被锁定，存在锁定标记但已被窃取<br>      “B” 没有在版本库中被锁定，存在锁定标记但已被破坏<br>    第七栏: 项目冲突标记<br>      “ ” 正常<br>      “C” 树冲突<br>    如果项目包含于树冲突之中，在项目状态行后会附加行，说明冲突的种类。</p><p>  是否过期的信息出现的位置是第九栏(与 -u 并用时):<br>      “*” 服务器上有更新版本<br>      “ ” 工作副本是最新版的</p><p>  剩余的栏位皆为变动宽度，并以空白隔开:<br>    工作版本号(使用 -u 或 -v 时)<br>    最后提交的版本与最后提交的作者(使用 -v 时)<br>    工作副本路径总是最后一栏，所以它可以包含空白字符。</p><p>  范例输出:<br>    svn status wc<br>     M     wc/bar.c<br>    A  +   wc/qax.c</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">svn status -u wc</span><br><span class="line"> M           965    wc/bar.c</span><br><span class="line">       *     965    wc/foo.c</span><br><span class="line">A  +         965    wc/qax.c</span><br><span class="line">Status against revision:   981</span><br><span class="line"></span><br><span class="line">svn status --show-updates --verbose wc</span><br><span class="line"> M           965       938 kfogel       wc/bar.c</span><br><span class="line">       *     965       922 sussman      wc/foo.c</span><br><span class="line">A  +         965       687 joe          wc/qax.c</span><br><span class="line">             965       687 joe          wc/zig.c</span><br><span class="line">Status against revision:   981</span><br><span class="line"></span><br><span class="line">svn status</span><br><span class="line"> M      wc/bar.c</span><br><span class="line">!     C wc/qaz.c</span><br><span class="line">      &gt;   local missing, incoming edit upon update</span><br><span class="line">D       wc/qax.c</span><br></pre></td></tr></table></figure><p>有效选项:<br>  -u [–show-updates]      : 显示更新信息<br>  -v [–verbose]           : 打印附加信息<br>  -N [–non-recursive]     : 过时；尝试 –depth=files 或 –depth=immediates<br>  –depth ARG              : 受深度参数 ARG(“empty”，“files”，“immediates”，或“infinity”) 约束的操作<br>  -q [–quiet]             : 不打印信息，或只打印概要信息<br>  –no-ignore              : 忽略默认值和 svn:ignore 属性<br>  –incremental            : 给予适合串联的输出<br>  –xml                    : 输出为 XML<br>  –ignore-externals       : 忽略外部项目<br>  –changelist ARG         : 只能对修改列表 ARG 成员操作<br>                             [aliases: –cl]</p><p>全局选项:<br>  –username ARG           : 指定用户名称 ARG<br>  –password ARG           : 指定密码 ARG<br>  –no-auth-cache          : 不要缓存用户认证令牌<br>  –non-interactive        : 不要交互提示<br>  –trust-server-cert      : 不提示的接受未知的 SSL 服务器证书(只用于选项 “–non-interactive”)<br>  –config-dir ARG         : 从目录 ARG 读取用户配置文件<br>  –config-option ARG      : 以下属格式设置用户配置选项：<br>                                 FILE:SECTION:OPTION=[VALUE]<br>                             例如：<br>                                 servers:global:http-library=serf</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;SVN状态表&quot;&gt;&lt;a href=&quot;#SVN状态表&quot; class=&quot;headerlink&quot; title=&quot;SVN状态表&quot;&gt;&lt;/a&gt;SVN状态表&lt;/h2&gt;&lt;p&gt;svn st –help&lt;/p&gt;
+&lt;p&gt;status (stat, st): 显示工作副本中目录与文件的状态
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="SVN" scheme="http://yyg.wiki/tags/SVN/"/>
+    
+  </entry>
   
   <entry>
     <title>UML中的关系</title>
@@ -108,9 +134,9 @@
     </summary>
     
     
-      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
-    
       <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
   </entry>
   
@@ -135,9 +161,9 @@
       <category term="works" scheme="http://yyg.wiki/categories/works/"/>
     
     
-      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
-    
       <category term="Nginx" scheme="http://yyg.wiki/tags/Nginx/"/>
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
   </entry>
   
@@ -418,11 +444,11 @@
       <category term="works" scheme="http://yyg.wiki/categories/works/"/>
     
     
-      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
-    
       <category term="Nginx" scheme="http://yyg.wiki/tags/Nginx/"/>
     
       <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
   </entry>
   
