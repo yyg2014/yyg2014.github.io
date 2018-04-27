@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yyg.wiki/"/>
-  <updated>2018-04-27T02:15:03.743Z</updated>
+  <updated>2018-04-27T02:18:10.144Z</updated>
   <id>http://yyg.wiki/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简单的Windows Server 2008 Ngxin服务器启动/监控脚本</title>
+    <link href="http://yyg.wiki/2018/04/27/%E7%AE%80%E5%8D%95%E7%9A%84Windows-Server-2008-Ngxin%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8-%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/"/>
+    <id>http://yyg.wiki/2018/04/27/简单的Windows-Server-2008-Ngxin服务器启动-监控脚本/</id>
+    <published>2018-04-27T02:17:20.000Z</published>
+    <updated>2018-04-27T02:18:10.144Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Ngxin启动/停止</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">REM Windows 下无效</span><br><span class="line">REM set PHP_FCGI_CHILDREN=5</span><br><span class="line"></span><br><span class="line">REM 每个进程处理的最大请求数，或设置为 Windows 环境变量</span><br><span class="line">set PHP_FCGI_MAX_REQUESTS=1000</span><br><span class="line"> </span><br><span class="line">echo Starting PHP FastCGI...</span><br><span class="line">D:/wnmp/RunHiddenConsole D:/wnmp/php/php-cgi.exe -b 127.0.0.1:9001 -c D:/wnmp/php/php.ini</span><br><span class="line">D:/wnmp/RunHiddenConsole D:/wnmp/php/php-cgi.exe -b 127.0.0.1:9002 -c D:/wnmp/php/php.ini</span><br><span class="line">D:/wnmp/RunHiddenConsole D:/wnmp/php/php-cgi.exe -b 127.0.0.1:9003 -c D:/wnmp/php/php.ini</span><br><span class="line">D:/wnmp/RunHiddenConsole D:/wnmp/php/php-cgi.exe -b 127.0.0.1:9004 -c D:/wnmp/php/php.ini</span><br><span class="line">echo Starting nginx...</span><br><span class="line">D:/wnmp/RunHiddenConsole D:/wnmp/nginx-1.8.1/nginx.exe -p D:/wnmp/nginx-1.8.1</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@echo off</span><br><span class="line">echo Stopping nginx...  </span><br><span class="line">taskkill /F /T /IM nginx.exe &gt; nul</span><br><span class="line">echo Stopping PHP FastCGI...</span><br><span class="line">taskkill /F /T /IM php-cgi.exe &gt; nul</span><br><span class="line">exit</span><br></pre></td></tr></table></figure><ul><li>简单实现服务器心跳检测BAT脚本</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line"> </span><br><span class="line">:aaa</span><br><span class="line"></span><br><span class="line">set str = &quot;0&quot;</span><br><span class="line">echo request..</span><br><span class="line">curl -sL -w %%&#123;http_code&#125; xxx.com:/admin/index -o /dev/null &gt; check.txt</span><br><span class="line"></span><br><span class="line">set /p str=&lt;check.txt</span><br><span class="line"></span><br><span class="line">if not &quot;%str%&quot;==&quot;200&quot; ( </span><br><span class="line"> echo %date% %time:~0,5% is error&gt;&gt;check.log</span><br><span class="line"> </span><br><span class="line"> echo. | call D:\wnmp\stop_nginx.bat</span><br><span class="line"> ping -n 3 127.0.0.1&gt;nul</span><br><span class="line"> echo. | call D:\wnmp\start_nginx.bat</span><br><span class="line"> ping -n 3 127.0.0.1&gt;nul</span><br><span class="line"> echo %date% %time:~0,5% start success&gt;&gt;check.log</span><br><span class="line">)</span><br><span class="line">ping -n 60 127.0.0.1&gt;nul</span><br><span class="line">goto aaa</span><br></pre></td></tr></table></figure><ul><li>VBS脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">DIM objShell  </span><br><span class="line">set objShell=wscript.createObject(&quot;wscript.shell&quot;)  </span><br><span class="line">iReturn=objShell.Run(&quot;cmd.exe /C cron.bat&quot;, 0, TRUE)</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;Ngxin启动/停止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+      <category term="Windows" scheme="http://yyg.wiki/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PEAR PCRE区别</title>
+    <link href="http://yyg.wiki/2018/04/27/PEAR-PCRE%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yyg.wiki/2018/04/27/PEAR-PCRE区别/</id>
+    <published>2018-04-27T02:16:10.000Z</published>
+    <updated>2018-04-27T02:16:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>Pear：是PHP的扩展代码包，所有的扩展均以PHP代码的形式出现，功能强大，安装简单，甚至可以改改就用。使用的时候，要在代码中进行Include才能够使用。</li></ul><ul><li>Pecl：是PHP的标准扩展，可以补充实际开发中所需的功能，所有的扩展都需要安装，在Windows下面以Dll的形式出现，在linux下面，需要单独进行编译，它的表现形式为根据PHP官方的标准用C语言写成，尽管源码开放但是一般人无法随意更改源码。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;Pear：是PHP的扩展代码包，所有的扩展均以PHP代码的形式出现，功能强大，安装简单，甚至可以改改就用。使用的时候，要在代码中进行Include才能够使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Pecl：是PHP的标准扩展，可以补充实际开发中所需的功能，所
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP待扩充知识点(陆续更新)</title>
@@ -477,57 +538,6 @@
       <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
       <category term="Nginx" scheme="http://yyg.wiki/tags/Nginx/"/>
-    
-      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux各个分区的作用</title>
-    <link href="http://yyg.wiki/2018/04/26/Linux%E5%90%84%E4%B8%AA%E5%88%86%E5%8C%BA%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
-    <id>http://yyg.wiki/2018/04/26/Linux各个分区的作用/</id>
-    <published>2018-04-26T02:44:05.000Z</published>
-    <updated>2018-04-26T02:45:47.093Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Linux各个分区的作用"><a href="#Linux各个分区的作用" class="headerlink" title="Linux各个分区的作用"></a>Linux各个分区的作用</h2><blockquote><p><strong>/ 根目录</strong>，建议在根目录下面只有目录，不要直接有文件。</p><p><strong>swap 交换空间</strong>，相当于Windows上的虚拟内存。</p><p><strong>/boot 包含了操作系统的内核和在启动系统过程中所要用到的文件</strong>，建这个分区是有必要的，因为目前大多数的PC机要受到BIOS的限制, 况且如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。这个分区的大小约在60MB—120MB之间。</p><p><strong>/home 用户的home目录所在地</strong>，这个分区的大小取决于有多少用户。如果是多用户共同使用一台电脑的话，这个分区是完全有必要的，况且根用户也可以很好地控制普通用户使用计算机，如对用户或者用户组实行硬盘限量使用，限制普通用户访问哪些文件等。</p><p><strong>/tmp 用来存放临时文件</strong>。这对于多用户系统或者网络服务器来说是有必要的。这样即使程序运行时生成大量的临时文件，或者用户对系统进行了错误的操作，文件系统的其它部分仍然是安全的。因为文件系统的这一部分仍然还承受着读写操作，所以它通常会比其它的部分更快地发生问题。这个目录是任何人都能访问的，所以需要定期清理。</p><p><strong>/usr Linux系统存放软件的地方</strong>，如有可能应将最大空间分给它。</p><p><strong>/bin<br>/usr/bin<br>/usr/local/bin 存放标准系统实用程序。</strong></p><p><strong>/srv 一些服务启动之后，这些服务所需要访问的数据目录</strong>，如WWW服务器需要的网页数据就可以放在/srv/www中。</p><p><strong>/etc 系统主要的设置文件几乎都放在这个目录内</strong>。</p><p><strong>/lib<br>/usr/lib<br>/usr/local/lib 系统使用的函数库的目录。</strong></p><p><strong>/root 系统管理员的家目录。</strong></p><p><strong>/lost+found 该目录在大多数情况下都是空的</strong>，但当实然停电或者非正常关机后，有些文件临时存入在此。</p><p><strong>/dev 设备文件</strong>，在Linux系统上，任何设备都以文件类型存放在这个目录中，如硬盘设备文件，软驱、光驱设备文件等。</p><p><strong>/mnt<br>/media 挂载目录，用来临时挂载别的文件系统或者别的硬件设备（如光驱、软驱）。</strong></p><p><strong>/opt 用于存储第三方软件的目录</strong>，不过我们还是习惯放在/usr/local下。</p><p><strong>/proc 此目录信息是在内存中由系统自行产生的</strong>，存储了一些当前的进程ID号和CPU、内存的映射等，因为这个目录下的数据都在内存中，所以本身不占任何硬盘空间。</p><p><strong>/sbin<br>/usr/sbin<br>/usr/local/sbin 存放一些系统管理员才会用到的执行命令。</strong></p><p><strong>/var 主要放置系统执行过程中经常变化的文件</strong>，例如缓存（cache）或者是随时更改的登录文件（log file）。</p><p><strong>/var/log 系统日志记录分区</strong>，如果设立了这一单独的分区，这样即使系统的日志文件出现了问题，它们也不会影响到操作系统的主分区。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Linux各个分区的作用&quot;&gt;&lt;a href=&quot;#Linux各个分区的作用&quot; class=&quot;headerlink&quot; title=&quot;Linux各个分区的作用&quot;&gt;&lt;/a&gt;Linux各个分区的作用&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;/ 根目录&lt;/st
-      
-    
-    </summary>
-    
-      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
-    
-    
-      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu下常见压缩/解压缩文件命令</title>
-    <link href="http://yyg.wiki/2018/04/26/Ubuntu%E4%B8%8B%E5%B8%B8%E8%A7%81%E5%8E%8B%E7%BC%A9-%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yyg.wiki/2018/04/26/Ubuntu下常见压缩-解压缩文件命令/</id>
-    <published>2018-04-26T02:14:15.000Z</published>
-    <updated>2018-04-26T02:20:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="ZIP"><a href="#ZIP" class="headerlink" title="ZIP"></a>ZIP</h3><h5 id="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："><a href="#zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac-OS，上使用。缺点就是支持的压缩率不是很高，而tar-gz和tar-gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：" class="headerlink" title="zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧："></a>zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux， Windows以及Mac OS，上使用。缺点就是支持的压缩率不是很高，而tar.gz和tar.gz2在压缩率方面做得非常好。闲话少说，我们步入正题吧：</h5><h5 id="我们可以使用下列的命令压缩一个目录："><a href="#我们可以使用下列的命令压缩一个目录：" class="headerlink" title="我们可以使用下列的命令压缩一个目录："></a>我们可以使用下列的命令压缩一个目录：</h5><blockquote><p>zip -r archive_name.zip directory_to_compress</p></blockquote><h5 id="下面是如果解压一个zip文档："><a href="#下面是如果解压一个zip文档：" class="headerlink" title="下面是如果解压一个zip文档："></a>下面是如果解压一个zip文档：</h5><blockquote><p>unzip archive_name.zip</p></blockquote><h3 id="TAR"><a href="#TAR" class="headerlink" title="TAR"></a>TAR</h3><h4 id="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："><a href="#Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：" class="headerlink" title="Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录："></a>Tar是在Linux中使用得非常广泛的文档打包格式。它的好处就是它只消耗非常少的CPU以及时间去打包文件，他仅仅只是一个打包工具，并不负责压缩。下面是如何打包一个目录：</h4><blockquote><p>tar -cvf archive_name.tar directory_to_compress</p></blockquote><h4 id="如何解包："><a href="#如何解包：" class="headerlink" title="如何解包："></a>如何解包：</h4><blockquote><p>tar -xvf archive_name.tar.gz</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -xvf archive_name.tar -C /tmp/extract_here/</p></blockquote><h3 id="TAR-GZ"><a href="#TAR-GZ" class="headerlink" title="TAR.GZ"></a>TAR.GZ</h3><h5 id="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："><a href="#这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：" class="headerlink" title="这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录："></a>这种格式是我使用得最多的压缩格式。它在压缩时不会占用太多CPU的，而且可以得到一个非常理想的压缩率。使用下面这种格式去压缩一个目录：</h5><blockquote><p>tar -zcvf archive_name.tar.gz directory_to_compress</p></blockquote><h5 id="解压缩："><a href="#解压缩：" class="headerlink" title="解压缩："></a>解压缩：</h5><blockquote><p>tar -zxvf archive_name.tar.gz</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-1" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -zxvf archive_name.tar.gz -C /tmp/extract_here/</p></blockquote><h3 id="TAR-BZ2"><a href="#TAR-BZ2" class="headerlink" title="TAR.BZ2"></a>TAR.BZ2</h3><h5 id="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。"><a href="#这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar-bz2进行压缩。" class="headerlink" title="这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。"></a>这种压缩格式是我们提到的所有方式中压缩率最好的。当然，这也就意味着，它比前面的方式要占用更多的CPU与时间。这个就是你如何使用tar.bz2进行压缩。</h5><blockquote><p>tar -jcvf archive_name.tar.bz2 directory_to_compress</p></blockquote><h5 id="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2"><a href="#上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：-2" class="headerlink" title="上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径："></a>上面这个解包命令将会将文档解开在当前目录下面。当然，你也可以用这个命令来捏住解包的路径：</h5><blockquote><p>tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;ZIP&quot;&gt;&lt;a href=&quot;#ZIP&quot; class=&quot;headerlink&quot; title=&quot;ZIP&quot;&gt;&lt;/a&gt;ZIP&lt;/h3&gt;&lt;h5 id=&quot;zip可能是目前使用得最多的文档压缩格式。它最大的优点就是在不同的操作系统平台，比如Linux，-Windows以及Mac
-      
-    
-    </summary>
-    
-      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
-    
     
       <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
     
