@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <meta name="baidu-site-verification" content="y0VH46Tz95" />
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>MySQL 5.7.11编译安装过程记录（个人开发级别 原创） | 杨雨庚的博客</title>
+  <meta name="description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
+<meta name="keywords" content="Linux,Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）">
+<meta property="og:url" content="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/index.html">
+<meta property="og:site_name" content="杨雨庚的博客">
+<meta property="og:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14551012/b40b4d9e-0300-11e6-9893-218793f969eb.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14552085/5e6fe324-030d-11e6-9025-1935c2a6552e.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14552150/04d2f490-030e-11e6-8a9c-978b86ce3696.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14552758/7d4f91d0-0313-11e6-98fb-0ce85ceab4e0.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557103/22714b6c-032e-11e6-89e9-91711df2c756.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14553490/7907a77e-0319-11e6-8253-7ca6e5725de6.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14556890/09274d7e-032d-11e6-8a5c-c72f31c3a84f.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557067/f0540f16-032d-11e6-8de5-0cd8deac3669.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557175/8df70d54-032e-11e6-9364-87beb59b5bba.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557204/aeaa110e-032e-11e6-996c-10ee6fa55ecc.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557322/52a2ae6a-032f-11e6-973c-55bdb12ab21e.png">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557425/e24bc272-032f-11e6-89a8-fa062c1c760a.png">
+<meta property="og:updated_time" content="2018-04-27T00:46:32.237Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）">
+<meta name="twitter:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="杨雨庚的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center theme-green" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/yyg2014" target="_blank" style="margin-left: 0.5em">
+          <img class="img-circle img-rotate" src="/images/logo.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Jason.Yang</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Freedom dream originality music and a little of flowers</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Beijing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav">
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-categories active">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>生活&学习</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/works/">works</a><span class="category-list-count">14</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">14</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" class="title">MySQL 5.7.11编译安装过程记录（个人开发级别 原创）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-27T00:45:51.000Z" itemprop="datePublished">2018-04-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/27/Linux-passwd文件格式解析/" class="title">Linux passwd文件格式解析</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-27T00:41:39.000Z" itemprop="datePublished">2018-04-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/" class="title">初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-26T08:07:06.000Z" itemprop="datePublished">2018-04-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/26/Fastcgi-params-与-Fastcgi-conf-Nginx-配置的历史（译）/" class="title">Fastcgi_params 与 Fastcgi.conf --Nginx 配置的历史（译）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-26T08:02:03.000Z" itemprop="datePublished">2018-04-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/04/26/ECMALL-session跨域实现解析-原创/" class="title">ECMALL session跨域实现解析 原创</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-04-26T07:58:33.000Z" itemprop="datePublished">2018-04-26</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-MySQL-5-7-11编译安装过程记录（个人开发级别-原创）" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL 5.7.11编译安装过程记录（个人开发级别 原创）
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" class="article-date">
+	  <time datetime="2018-04-27T00:45:51.000Z" itemprop="datePublished">2018-04-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/works/">works</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Linux/">Linux</a>, <a class="article-tag-link" href="/tags/Mysql/">Mysql</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry markdown-body" itemprop="articleBody">
+      
+        <p>最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。<br>！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！<br>(原创文档，转载请注明！)<br><strong>系统环境：Ubuntu14.04LTS</strong><br><strong>MySQLl版本：5.7.11</strong><br>首先到官网下载MySQL源码包：<a href="http://www.mysql.com/downloads/" target="_blank" rel="noopener">http://www.mysql.com/downloads/</a><br>然后解压到 <code>/usr/local/src/</code>目录下<br><img src="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png" alt="tar"></p>
+<blockquote>
+<p>tar -zxvf mysql-5.7.11.tar.gz -C /usr/local/src<br>cd /usr/local/src/mysql-5.7.11</p>
+</blockquote>
+<h4 id="然后按照5-5版本的方式执行cmake（从5-5以后-不再使用configure进行编译）"><a href="#然后按照5-5版本的方式执行cmake（从5-5以后-不再使用configure进行编译）" class="headerlink" title="然后按照5.5版本的方式执行cmake（从5.5以后 不再使用configure进行编译）"></a>然后按照5.5版本的方式执行cmake（从5.5以后 不再使用configure进行编译）</h4><blockquote>
+<p>cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lnmp/mysql - DMYSQL_DATADIR=/usr/local/lnmp/mysql/data -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_READLINE=1 -DWITH_SSL=bundled -DWITH_EMBEDDED_SERVER=1 -DENABLED_LOCAL_INFILE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITHOUT_PARTITION_STORAGE_ENGINE=1 -DWITH_DEBUG=0</p>
+</blockquote>
+<h4 id="但是执行之后发现存在错误"><a href="#但是执行之后发现存在错误" class="headerlink" title="但是执行之后发现存在错误"></a>但是执行之后发现存在错误</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14551012/b40b4d9e-0300-11e6-9893-218793f969eb.png" alt="boost"></p>
+<h4 id="查找错误根源发现MySQL5-6以后的版本需要用到Boost库（Boost库是一个可移植、提供源代码的C-库）下载了最新的Boost-1-60版本后解压到-usr-local-src-目录并指定cmake参数后从新编译"><a href="#查找错误根源发现MySQL5-6以后的版本需要用到Boost库（Boost库是一个可移植、提供源代码的C-库）下载了最新的Boost-1-60版本后解压到-usr-local-src-目录并指定cmake参数后从新编译" class="headerlink" title="查找错误根源发现MySQL5.6以后的版本需要用到Boost库（Boost库是一个可移植、提供源代码的C++库）下载了最新的Boost-1.60版本后解压到 /usr/local/src/目录并指定cmake参数后从新编译"></a>查找错误根源发现MySQL5.6以后的版本需要用到Boost库（Boost库是一个可移植、提供源代码的C++库）下载了最新的Boost-1.60版本后解压到 <code>/usr/local/src/</code>目录并指定cmake参数后从新编译</h4><h4 id="具体的cmake参数可以参见MySQL官网"><a href="#具体的cmake参数可以参见MySQL官网" class="headerlink" title="具体的cmake参数可以参见MySQL官网"></a><a href="https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html" target="_blank" rel="noopener">具体的cmake参数可以参见MySQL官网</a></h4><blockquote>
+<p>cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lnmp/mysql  -DMYSQL_DATADIR=/usr/local/lnmp/mysql/data -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_READLINE=1 -DWITH_SSL=bundled -DWITH_EMBEDDED_SERVER=1 -DENABLED_LOCAL_INFILE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITHOUT_PARTITION_STORAGE_ENGINE=1 -DWITH_DEBUG=0 -DWITH_BOOST=/usr/local/src/boost_1_60_0</p>
+</blockquote>
+<h4 id="但是运行以后发现还是有错误"><a href="#但是运行以后发现还是有错误" class="headerlink" title="但是运行以后发现还是有错误"></a>但是运行以后发现还是有错误</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14552085/5e6fe324-030d-11e6-9025-1935c2a6552e.png" alt="boost16"></p>
+<h4 id="之后试验了几次其他版本的Boost-1-55-1-56…-最后证明只有1-59版本的Boost包才可以，下载"><a href="#之后试验了几次其他版本的Boost-1-55-1-56…-最后证明只有1-59版本的Boost包才可以，下载" class="headerlink" title="之后试验了几次其他版本的Boost 1.55 1.56… 最后证明只有1.59版本的Boost包才可以，下载"></a>之后试验了几次其他版本的Boost 1.55 1.56… 最后证明只有1.59版本的Boost包才可以，下载</h4><p>Boost_1.59版本并解压到<code>/usr/local/src/</code>目录重新执行cmake编译命令</p>
+<blockquote>
+<p>cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lnmp/mysql  -DMYSQL_DATADIR=/usr/local/lnmp/mysql/data -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_READLINE=1 -DWITH_SSL=bundled -DWITH_EMBEDDED_SERVER=1 -DENABLED_LOCAL_INFILE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITHOUT_PARTITION_STORAGE_ENGINE=1 -DWITH_DEBUG=0 -DWITH_BOOST=/usr/local/src/boost_1_59_0</p>
+</blockquote>
+<p><img src="https://cloud.githubusercontent.com/assets/9836394/14552150/04d2f490-030e-11e6-8a9c-978b86ce3696.png" alt="makeover"></p>
+<h4 id="发现这次没有了明显的错误提示-执行-make-amp-amp-make-install-命令-并等待检测和安装完毕。"><a href="#发现这次没有了明显的错误提示-执行-make-amp-amp-make-install-命令-并等待检测和安装完毕。" class="headerlink" title="发现这次没有了明显的错误提示,执行 make &amp;&amp; make install 命令 并等待检测和安装完毕。"></a>发现这次没有了明显的错误提示,执行 <code>make &amp;&amp; make install</code> 命令 并等待检测和安装完毕。</h4><p>第一次尝试检测并安装的时候出现过一次错误 提示需要安装 libncurses5-dev 依赖库<br>直接执行了<code>atpt-get install -y libncurses5-dev</code>安装依赖之后一切正常。<br>(时间比较久，可以去抽支烟、去趟洗手间、和妹子聊聊天 呵呵！)</p>
+<h4 id="安装完毕以后进入MySQL安装目录-目录结构图下"><a href="#安装完毕以后进入MySQL安装目录-目录结构图下" class="headerlink" title="安装完毕以后进入MySQL安装目录 目录结构图下"></a>安装完毕以后进入MySQL安装目录 目录结构图下</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14552758/7d4f91d0-0313-11e6-98fb-0ce85ceab4e0.png" alt="dir"></p>
+<h4 id="创建mysql用户及用户组"><a href="#创建mysql用户及用户组" class="headerlink" title="创建mysql用户及用户组"></a>创建mysql用户及用户组</h4><blockquote>
+<p>sudo groupadd mysql<br>sudo useradd -r -g mysql mysql</p>
+</blockquote>
+<h4 id="权限设置及授权"><a href="#权限设置及授权" class="headerlink" title="权限设置及授权"></a>权限设置及授权</h4><blockquote>
+<p>cd /usr/local/mysql<br>sudo chown -R mysql .<br>sudo chgrp -R mysql .<br>sudo chown -R root .</p>
+</blockquote>
+<h4 id="copy配置文件-并设置配置文件"><a href="#copy配置文件-并设置配置文件" class="headerlink" title="copy配置文件 并设置配置文件"></a>copy配置文件 并设置配置文件</h4><blockquote>
+<p>cp support-files/my-default.cnf /etc/my.cnf<br>vim /etc/my.cnf</p>
+</blockquote>
+<p><img src="https://cloud.githubusercontent.com/assets/9836394/14557103/22714b6c-032e-11e6-89e9-91711df2c756.png" alt="image"></p>
+<h4 id="注意-MySQL5-5的时候用命令sudo-scripts-mysql-install-db-user-mysql-还有-bin-mysqld-safe-user-mysql-amp-配置MySQL，但是5-6以后要使用-bin-mysqld-safe-initialize-user-mysql-amp-来配置和启动"><a href="#注意-MySQL5-5的时候用命令sudo-scripts-mysql-install-db-user-mysql-还有-bin-mysqld-safe-user-mysql-amp-配置MySQL，但是5-6以后要使用-bin-mysqld-safe-initialize-user-mysql-amp-来配置和启动" class="headerlink" title="注意 MySQL5.5的时候用命令sudo scripts/mysql_install_db --user=mysql 还有 ./bin/mysqld_safe --user=mysql &amp; 配置MySQL，但是5.6以后要使用 ./bin/mysqld_safe --initialize --user=mysql &amp;来配置和启动."></a>注意 MySQL5.5的时候用命令<code>sudo scripts/mysql_install_db --user=mysql</code> 还有 <code>./bin/mysqld_safe --user=mysql &amp;</code> 配置MySQL，但是5.6以后要使用 <code>./bin/mysqld_safe --initialize --user=mysql &amp;</code>来配置和启动.</h4><h4 id="执行initialize的时候-会提示"><a href="#执行initialize的时候-会提示" class="headerlink" title="执行initialize的时候 会提示"></a>执行initialize的时候 会提示</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14553490/7907a77e-0319-11e6-8253-7ca6e5725de6.png" alt="image"></p>
+<h4 id="查找解决办法是在MySQL配置文件-这里是-etc-my-cnf中添加一行-explicit-defaults-for-timestamp-1"><a href="#查找解决办法是在MySQL配置文件-这里是-etc-my-cnf中添加一行-explicit-defaults-for-timestamp-1" class="headerlink" title="查找解决办法是在MySQL配置文件 这里是/etc/my.cnf中添加一行 explicit_defaults_for_timestamp = 1"></a>查找解决办法是在MySQL配置文件 这里是<code>/etc/my.cnf</code>中添加一行 <code>explicit_defaults_for_timestamp = 1</code></h4><h4 id="然后初始化密码以及生成data目录"><a href="#然后初始化密码以及生成data目录" class="headerlink" title="然后初始化密码以及生成data目录"></a>然后初始化密码以及生成data目录</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14556890/09274d7e-032d-11e6-8a5c-c72f31c3a84f.png" alt="image"><br>（注意最后一行的初始登录密码）</p>
+<h4 id="然后启动mysql-服务-bin-mysqld-defaults-file-etc-my-cnf-user-mysql-amp"><a href="#然后启动mysql-服务-bin-mysqld-defaults-file-etc-my-cnf-user-mysql-amp" class="headerlink" title="然后启动mysql 服务 ./bin/mysqld --defaults-file=/etc/my.cnf --user=mysql &amp;"></a>然后启动mysql 服务 <code>./bin/mysqld --defaults-file=/etc/my.cnf --user=mysql &amp;</code></h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14557067/f0540f16-032d-11e6-8de5-0cd8deac3669.png" alt="image"></p>
+<h4 id="启动服务后使用命令-netstat-tnlp-grep-mysql或-ps-ef-grep-mysql查看是否启动成功"><a href="#启动服务后使用命令-netstat-tnlp-grep-mysql或-ps-ef-grep-mysql查看是否启动成功" class="headerlink" title="启动服务后使用命令 netstat -tnlp|grep mysql或 ps -ef|grep mysql查看是否启动成功"></a>启动服务后使用命令 <code>netstat -tnlp|grep mysql</code>或 <code>ps -ef|grep mysql</code>查看是否启动成功</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14557175/8df70d54-032e-11e6-9364-87beb59b5bba.png" alt="image"></p>
+<h4 id="使用之前初始化后自动生成的初始密码登录-mysql"><a href="#使用之前初始化后自动生成的初始密码登录-mysql" class="headerlink" title="使用之前初始化后自动生成的初始密码登录 mysql"></a>使用之前初始化后自动生成的初始密码登录 mysql</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14557204/aeaa110e-032e-11e6-996c-10ee6fa55ecc.png" alt="image"></p>
+<h4 id="成功登录后-修改root的密码-与之前5-5一下版本不同的是-设置密码不再使用-SET-PASSWORD-FOR-39-root-39-39-localhost-39-PASSWORD-39-123456-39-这个命令了。现在使用新的命令来设置密码-ALTER-USER-39-root-39-39-localhost-39-IDENTIFIED-BY-39-new-password-39"><a href="#成功登录后-修改root的密码-与之前5-5一下版本不同的是-设置密码不再使用-SET-PASSWORD-FOR-39-root-39-39-localhost-39-PASSWORD-39-123456-39-这个命令了。现在使用新的命令来设置密码-ALTER-USER-39-root-39-39-localhost-39-IDENTIFIED-BY-39-new-password-39" class="headerlink" title="成功登录后 修改root的密码 与之前5.5一下版本不同的是 设置密码不再使用 SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39;=PASSWORD(&#39;123456&#39;); 这个命令了。现在使用新的命令来设置密码 ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new_password&#39;;"></a>成功登录后 修改root的密码 与之前5.5一下版本不同的是 设置密码不再使用 <code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39;=PASSWORD(&#39;123456&#39;);</code> 这个命令了。现在使用新的命令来设置密码 <code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;new_password&#39;;</code></h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14557322/52a2ae6a-032f-11e6-973c-55bdb12ab21e.png" alt="image"></p>
+<h4 id="查看mysql-的-user表-还有一个发现-，新版本不会像之前老的版本一样有很多的user字段为空的用户了-只有2个用户"><a href="#查看mysql-的-user表-还有一个发现-，新版本不会像之前老的版本一样有很多的user字段为空的用户了-只有2个用户" class="headerlink" title="查看mysql 的 user表 还有一个发现 ，新版本不会像之前老的版本一样有很多的user字段为空的用户了  只有2个用户"></a>查看mysql 的 user表 还有一个发现 ，新版本不会像之前老的版本一样有很多的user字段为空的用户了  只有2个用户</h4><p><img src="https://cloud.githubusercontent.com/assets/9836394/14557425/e24bc272-032f-11e6-89a8-fa062c1c760a.png" alt="image"></p>
+<h4 id="如果需要设置开机自启动的话执行"><a href="#如果需要设置开机自启动的话执行" class="headerlink" title="如果需要设置开机自启动的话执行"></a>如果需要设置开机自启动的话执行</h4><blockquote>
+<p>cp support-files/mysql.server /etc/init.d/mysql<br>  update-rc.d mysql defaults</p>
+</blockquote>
+<h4 id="就此基本大功告成了！-关于具体的mysql配置就不再这研究了，依个人需要修改就可以。安装过程中有不少waring没有在意，对于不合理的地方欢迎指正，我会非常感谢这个学习的机会"><a href="#就此基本大功告成了！-关于具体的mysql配置就不再这研究了，依个人需要修改就可以。安装过程中有不少waring没有在意，对于不合理的地方欢迎指正，我会非常感谢这个学习的机会" class="headerlink" title="就此基本大功告成了！ 关于具体的mysql配置就不再这研究了，依个人需要修改就可以。安装过程中有不少waring没有在意，对于不合理的地方欢迎指正，我会非常感谢这个学习的机会."></a>就此基本大功告成了！ 关于具体的mysql配置就不再这研究了，依个人需要修改就可以。安装过程中有不少waring没有在意，对于不合理的地方欢迎指正，我会非常感谢这个学习的机会.</h4><p>参考资料：<a href="http://dev.mysql.com/doc/refman/5.7/en/installing.html" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/5.7/en/installing.html</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" title="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）" target="_blank" rel="external">http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/yyg2014" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/logo.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/yyg2014" target="_blank"><span class="text-dark">Jason.Yang</span><small class="ml-1x">Freedom dream originality music and a little of flowers</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+       
+    <div id="uyan_frame"></div>
+
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/04/27/Linux-passwd文件格式解析/" title="Linux passwd文件格式解析"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/zfb.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechat.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        &copy; 2018 Jason.Yang
+        
+        <!-- <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div> -->
+    </div>
+</footer>
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+    
+    
+
+
+
+</body>
+</html>
