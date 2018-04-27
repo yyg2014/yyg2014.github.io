@@ -18,21 +18,20 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>初步了解 Nginx unix domain socket 与 TCP socket 区别(原创) | 杨雨庚的博客</title>
-  <meta name="description" content="（属于个人的粗浅了解，如有纰漏 欢迎指正）在编译安装Nginx的时候，我想绝大多数的人会在网上查阅各种安装与配置的文档，当然我也不例外。但是在配置php-fpm与Nginx交互的socket方式时产生了一个疑问，因为有的文档上写着应该这样配置：  fastcgi_pass   127.0.0.1:9000;  而有的文档上却又写着：  fastcgi_pass   unix:/var/run/ph">
-<meta name="keywords" content="Nginx">
-<meta property="og:type" content="article">
-<meta property="og:title" content="初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)">
-<meta property="og:url" content="http://yyg.wiki/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/index.html">
+  <title>归档: 2018 | 杨雨庚的博客</title>
+  <meta name="description" content="杨雨庚的博客--点滴成长">
+<meta name="keywords" content="杨雨庚的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="杨雨庚的博客">
+<meta property="og:url" content="http://yyg.wiki/archives/2018/page/3/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="（属于个人的粗浅了解，如有纰漏 欢迎指正）在编译安装Nginx的时候，我想绝大多数的人会在网上查阅各种安装与配置的文档，当然我也不例外。但是在配置php-fpm与Nginx交互的socket方式时产生了一个疑问，因为有的文档上写着应该这样配置：  fastcgi_pass   127.0.0.1:9000;  而有的文档上却又写着：  fastcgi_pass   unix:/var/run/ph">
+<meta property="og:description" content="杨雨庚的博客--点滴成长">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-26T08:08:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)">
-<meta name="twitter:description" content="（属于个人的粗浅了解，如有纰漏 欢迎指正）在编译安装Nginx的时候，我想绝大多数的人会在网上查阅各种安装与配置的文档，当然我也不例外。但是在配置php-fpm与Nginx交互的socket方式时产生了一个疑问，因为有的文档上写着应该这样配置：  fastcgi_pass   127.0.0.1:9000;  而有的文档上却又写着：  fastcgi_pass   unix:/var/run/ph">
+<meta name="twitter:title" content="杨雨庚的博客">
+<meta name="twitter:description" content="杨雨庚的博客--点滴成长">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yyg.wiki/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/index.html">
+  <link rel="canonical" href="http://yyg.wiki/archives/2018/page/3/index.html">
   
     <link rel="alternate" href="/atom.xml" title="杨雨庚的博客" type="application/atom+xml">
   
@@ -299,190 +298,74 @@
   
   
 <main class="main" role="main">
-  <div class="content">
-  <article id="post-初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  	<article class="content article article-archives article-type-list" itemscope="">
+	    <header class="article-header">
+	      <h1 itemprop="title">归档: 2018</h1>
+	      <p class="text-muted">共 1 篇文章</p>
+	    </header>
+	    <div class="article-body">
+	      
+  
+  
     
-    <div class="article-header">
+    
       
-        
-  
-    <h1 class="article-title" itemprop="name">
-      初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)
-    </h1>
-  
-
       
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/" class="article-date">
-	  <time datetime="2018-04-26T08:07:06.000Z" itemprop="datePublished">2018-04-26</time>
-	</a>
-</span>
-        
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/works/">works</a>
-  </span>
-
-        
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Nginx/">Nginx</a>
-  </span>
-
-
-        
-
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/#comments" class="article-comment-link">评论</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry markdown-body" itemprop="articleBody">
-      
-        <p>（属于个人的粗浅了解，如有纰漏 欢迎指正）<br>在编译安装Nginx的时候，我想绝大多数的人会在网上查阅各种安装与配置的文档，当然我也不例外。但是在配置php-fpm与Nginx交互的socket方式时产生了一个疑问，因为有的文档上写着应该这样配置：</p>
-<blockquote>
-<p>fastcgi_pass   127.0.0.1:9000;</p>
-</blockquote>
-<p>而有的文档上却又写着：</p>
-<blockquote>
-<p>fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock</p>
-</blockquote>
-<p>疑惑丛生，为什么会有两种不同的设置方式？ 他们之间孰优孰劣？ 优在哪？ 劣又在哪？</p>
-<p>诸多疑问使我又google、百度了很多篇文章 而综合 stackoverflow，知乎等比较靠谱一点的网站的源文档（并非那些复制粘贴而来，人与亦云的文档）后总结了以下几点：</p>
-<p>1.采用unix domain socket方式 在访问量不是很大的情况下速度要比TCP的方式效率高一些，虽然一般情况下php与nginx服务都在本地，localhost或者 127.0.0.1也是做本地环回，但是因为不走TCP协议所以unix domain socket 的效率较高。但是稳定性不如TCP。</p>
-<p>2.unix domain socket结合长链接配置，可以有效提高端口的复用率，明显提升服务器效率。但是在访问量较大时采用TCP与短链接会更好的应对并发请求，而且更加稳定（长链接可能会产生阻塞）。</p>
-<p>3.unix domain socket 与TCP socket相比，前者只适合本地服务之间的通信，所以便于迁移性不如后者，因为迁移服务器时只需要设置新的ip地址与对应端口即可.</p>
-<p>综上所述如果是仅仅用于个人开发的话 二者没有区别 但是如果是配置服务器或反向代理的话，就要根据具体情况选择性的进行设置。</p>
-
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://yyg.wiki/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/" title="初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)" target="_blank" rel="external">http://yyg.wiki/2018/04/26/初步了解-Nginx-unix-domain-socket-与-TCP-socket-区别-原创/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
-
-
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/yyg2014" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/logo.png" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/yyg2014" target="_blank"><span class="text-dark">Jason.Yang</span><small class="ml-1x">Freedom dream originality music and a little of flowers</small></a></h3>
-        <div>个人简介。</div>
-      </div>
-    </figure>
-  </div>
-</div>
-
-
-    </div>
-  </article>
-  
-    
-  <section id="comments">
-  	
-       
-    <div id="uyan_frame"></div>
-
-    
-  </section>
-
-
-  
-</div>
-
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
-    
-    <li class="prev">
-      <a href="/2018/04/27/Linux-passwd文件格式解析/" title="Linux passwd文件格式解析"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
-    
-    <li class="next">
-      <a href="/2018/04/26/Fastcgi-params-与-Fastcgi-conf-Nginx-配置的历史（译）/" title="Fastcgi_params 与 Fastcgi.conf --Nginx 配置的历史（译）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
-  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
-    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
-  </div> -->
-  
-  
-  <div class="bar-right">
-    
-    <div class="share-component" data-sites="weibo,qq,wechat" data-mobile-sites="weibo,qq,qzone"></div>
-    
-  </div>
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content donate">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-head">
-            <p>感谢您的支持，我会继续努力的!</p>
-          </div>
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
-              <div class="donate-payimg">
-                <img src="/images/donate/zfb.png" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
-              <div class="donate-payimg">
-                <img src="/images/donate/wechat.png" alt="扫码支持" title="扫一扫" />
-              </div>
-              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
-              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-          <div class="donate-footer">
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
-              </li>
-              <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
-              </li>
-            </ul>
-          </div>
+      <section class="panel panel-default b-no">
+        <div class="panel-heading" role="tab">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2018" aria-expanded="true">
+              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
+              2018
+            </a>
+            <!-- <a href="/archives/2018" class="archive-year">2018</a> -->
+          </h3>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div id="collapse2018" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2018">
+        <div class="panel-body">
+          <div class="collection">
+    
+    
+<a href="/2018/04/24/Linux下-dev-shm-目录作用/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2018-04-24T09:22:37.000Z" itemprop="datePublished">2018-04-24</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> Linux下 /dev/shm 目录作用
+</a>
 
 
+  
+  
+    </div></div></div></section>
+  
 
+	    </div>
+  	</article>
+  	
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev">
+                <a href="/archives/2018/page/2/">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next disabled">
+                <a href="javascript:;">
+                    下一页
+                    <i class="icon icon-angle-right"></i>                    
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 3 of 3</div>
+        </div>
+    </nav>
+    
+ 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -530,12 +413,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
     
-    
-        
-    
-    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
-
-
     
     
 
