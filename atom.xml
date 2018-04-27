@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yyg.wiki/"/>
-  <updated>2018-04-26T08:08:55.000Z</updated>
+  <updated>2018-04-27T00:43:46.000Z</updated>
   <id>http://yyg.wiki/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux passwd文件格式解析</title>
+    <link href="http://yyg.wiki/2018/04/27/Linux-passwd%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yyg.wiki/2018/04/27/Linux-passwd文件格式解析/</id>
+    <published>2018-04-27T00:41:39.000Z</published>
+    <updated>2018-04-27T00:43:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、-etc-passwd"><a href="#一、-etc-passwd" class="headerlink" title="一、/etc/passwd"></a>一、/etc/passwd</h2><p>/etc/passwd 文件是一个纯文本文件，每行采用了相同的格式：<br>name:password:uid:gid:comment:home:shell<br>name 用户登录名<br>password 用户口令。此域中的口令是加密的,常用x表示。当用户登录系统时，系统对输入的口令采取相同的算法，与此域中的内容进行比较。如果此域为空，表明该用户登录时不需要口令。<br>uid 指定用户的 UID。用户登录进系统后，系统通过该值，而不是用户名来识别用户。<br>gid GID。如果系统要对相同的一群人赋予相同的权利，则使用该值。<br>comment 用来保存用户的真实姓名和个人细节，或者全名。<br>home 指定用户的主目录的绝对路径。<br>shell 如果用户登录成功，则要执行的命令的绝对路径放在这一区域中。它可以是任何命令。<br>如果/etc/passwd文件存放的是用户的信息，由6个分号组成的7个信息，解释如下<br>（1）：用户名。<br>（2）：密码（已经加密）<br>（3）：UID（用户标识）,操作系统自己用的<br>（4）：GID组标识。<br>（5）：用户全名或本地帐号<br>（6）：开始目录<br>（7）：登录使用的Shell，就是对登录命令进行解析的工具。<br>例如：abc : x : 501 : 501 : /home/abc : /bin/bash </p><h2 id="二、-etc-shadow"><a href="#二、-etc-shadow" class="headerlink" title="二、/etc/shadow"></a>二、/etc/shadow</h2><p>如果查看/etc/shadow文件存放的特殊帐号信息如下：<br>name:!!:13675:0:99999:7:::<br>每一行给一个特殊帐户定义密码信息，每个字段用 : 隔开。<br>字段 1 定义与这个 shadow 条目相关联的特殊用户帐户。<br>字段 2 包含一个加密的密码。<br>字段 3 自 1/1/1970 起，密码被修改的天数<br>字段 4 密码将被允许修改之前的天数（0 表示“可在任何时间修改”）<br>字段 5 系统将强制用户修改为新密码之前的天数（1 表示“永远都不能修改”）<br>字段 6 密码过期之前，用户将被警告过期的天数（-1 表示“没有警告”）<br>字段 7 密码过期之后，系统自动禁用帐户的天数（-1 表示“永远不会禁用”）<br>字段 8 该帐户被禁用的天数（-1 表示“该帐户被启用”）<br>字段 9 保留供将来使用</p><p>如果查看/etc/shadow下存放的普通帐号信息如下：<br>（1）：帐号名称<br>（2）：密码：这里是加密过的，但高手也可以解密的。要主要安全问题（代！符号标识该帐号不能用来登录）<br>（3）：上次修改密码的日期<br>（4）：密码不可被变更的天数<br>（5）：密码需要被重新变更的天数（99999表示不需要变更）<br>（6）：密码变更前提前几天警告<br>（7）：帐号失效日期<br>（8）：帐号取消日期<br>（9）：保留条目，目前没用<br>例如：abc:!!:14768:0:99999:7:::<br>转自 <a href="http://blog.chinaunix.net/uid-22117760-id-264606.html" target="_blank" rel="noopener">http://blog.chinaunix.net/uid-22117760-id-264606.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、-etc-passwd&quot;&gt;&lt;a href=&quot;#一、-etc-passwd&quot; class=&quot;headerlink&quot; title=&quot;一、/etc/passwd&quot;&gt;&lt;/a&gt;一、/etc/passwd&lt;/h2&gt;&lt;p&gt;/etc/passwd 文件是一个纯文本文件，每行采
+      
+    
+    </summary>
+    
+      <category term="works" scheme="http://yyg.wiki/categories/works/"/>
+    
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>初步了解 Nginx unix domain socket 与 TCP socket 区别(原创)</title>
@@ -243,9 +268,9 @@
     
       <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
-      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
-    
       <category term="Nginx" scheme="http://yyg.wiki/tags/Nginx/"/>
+    
+      <category term="Linux" scheme="http://yyg.wiki/tags/Linux/"/>
     
   </entry>
   

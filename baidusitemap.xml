@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://yyg.wiki/2018/04/27/Linux-passwd%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-04-27T00:43:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux passwd文件格式解析</title>
+        <pubTime>2018-04-27T00:41:39.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="works" url="http://yyg.wiki/categories/works/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yyg.wiki/2018/04/26/%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3-Nginx-unix-domain-socket-%E4%B8%8E-TCP-socket-%E5%8C%BA%E5%88%AB-%E5%8E%9F%E5%88%9B/</loc>
     <lastmod>2018-04-26T08:08:55.000Z</lastmod>
     <data>
@@ -155,9 +175,9 @@
         
         <tag>PHP</tag>
          
-        <tag>Linux</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Linux</tag>
          
          
            
