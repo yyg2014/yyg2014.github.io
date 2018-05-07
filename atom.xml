@@ -302,9 +302,9 @@
       <category term="works" scheme="http://yyg.wiki/categories/works/"/>
     
     
-      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
-    
       <category term="Nginx" scheme="http://yyg.wiki/tags/Nginx/"/>
+    
+      <category term="PHP" scheme="http://yyg.wiki/tags/PHP/"/>
     
   </entry>
   
