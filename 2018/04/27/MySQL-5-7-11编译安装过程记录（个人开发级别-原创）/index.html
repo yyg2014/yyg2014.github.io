@@ -18,14 +18,14 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>MySQL 5.7.11编译安装过程记录（个人开发级别 原创） | 杨雨庚的博客</title>
-  <meta name="description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
-<meta name="keywords" content="Linux,Mysql">
+  <title>MySql 5.7.11编译安装过程记录（个人开发级别 原创） | 杨雨庚的博客</title>
+  <meta name="description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySql版本：5.7.11首先到官网下载MySql">
+<meta name="keywords" content="Linux,MySql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）">
+<meta property="og:title" content="MySql 5.7.11编译安装过程记录（个人开发级别 原创）">
 <meta property="og:url" content="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
+<meta property="og:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySql版本：5.7.11首先到官网下载MySql">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14551012/b40b4d9e-0300-11e6-9893-218793f969eb.png">
@@ -40,10 +40,10 @@
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557204/aeaa110e-032e-11e6-996c-10ee6fa55ecc.png">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557322/52a2ae6a-032f-11e6-973c-55bdb12ab21e.png">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557425/e24bc272-032f-11e6-89a8-fa062c1c760a.png">
-<meta property="og:updated_time" content="2018-04-27T00:46:32.237Z">
+<meta property="og:updated_time" content="2018-05-07T03:44:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）">
-<meta name="twitter:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySQLl版本：5.7.11首先到官网下载MySQ">
+<meta name="twitter:title" content="MySql 5.7.11编译安装过程记录（个人开发级别 原创）">
+<meta name="twitter:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySql版本：5.7.11首先到官网下载MySql">
 <meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/index.html">
@@ -137,7 +137,7 @@
         
         
         
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories active">
           <a href="/categories">
             
             <i class="icon icon-folder"></i>
@@ -159,7 +159,7 @@
         
         
         
-        <li class="menu-item menu-item-repository active">
+        <li class="menu-item menu-item-repository">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -194,7 +194,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/works/">works</a><span class="category-list-count">21</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/works/">works</a><span class="category-list-count">22</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +204,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -214,7 +214,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">23</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">23</span></li></ul>
     </div>
   </div>
 
@@ -233,7 +233,22 @@
                 <a class="category-link" href="/categories/works/">works</a>
               </p>
               <p class="item-title">
-                <a href="/2018/05/04/Mysql-Hash与B-Tree索引/" class="title">Mysql Hash与B-Tree索引</a>
+                <a href="/2018/05/07/Mysql常见索引失效原因总结/" class="title">MySql常见索引失效原因总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-05-07T03:39:59.000Z" itemprop="datePublished">2018-05-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/works/">works</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/05/04/Mysql-Hash与B-Tree索引/" class="title">MySql Hash与B-Tree索引</a>
               </p>
               <p class="item-date">
                 <time datetime="2018-05-04T07:14:29.000Z" itemprop="datePublished">2018-05-04</time>
@@ -286,21 +301,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/works/">works</a>
-              </p>
-              <p class="item-title">
-                <a href="/2018/04/27/Svn-st-状态解析/" class="title">Svn st 状态解析</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2018-04-27T02:10:53.000Z" itemprop="datePublished">2018-04-27</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -321,7 +321,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL 5.7.11编译安装过程记录（个人开发级别 原创）
+      MySql 5.7.11编译安装过程记录（个人开发级别 原创）
     </h1>
   
 
@@ -342,7 +342,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Linux/">Linux</a>, <a class="article-tag-link" href="/tags/Mysql/">Mysql</a>
+	<a class="article-tag-link" href="/tags/Linux/">Linux</a>, <a class="article-tag-link" href="/tags/MySql/">MySql</a>
   </span>
 
 
@@ -354,7 +354,7 @@
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。<br>！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！<br>(原创文档，转载请注明！)<br><strong>系统环境：Ubuntu14.04LTS</strong><br><strong>MySQLl版本：5.7.11</strong><br>首先到官网下载MySQL源码包：<a href="http://www.mysql.com/downloads/" target="_blank" rel="noopener">http://www.mysql.com/downloads/</a><br>然后解压到 <code>/usr/local/src/</code>目录下<br><img src="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png" alt="tar"></p>
+        <p>最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。<br>！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！<br>(原创文档，转载请注明！)<br><strong>系统环境：Ubuntu14.04LTS</strong><br><strong>MySql版本：5.7.11</strong><br>首先到官网下载MySql源码包：<a href="http://www.mysql.com/downloads/" target="_blank" rel="noopener">http://www.mysql.com/downloads/</a><br>然后解压到 <code>/usr/local/src/</code>目录下<br><img src="https://cloud.githubusercontent.com/assets/9836394/14550910/c02f5346-02ff-11e6-82fb-08481a315f55.png" alt="tar"></p>
 <blockquote>
 <p>tar -zxvf mysql-5.7.11.tar.gz -C /usr/local/src<br>cd /usr/local/src/mysql-5.7.11</p>
 </blockquote>
@@ -403,7 +403,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" title="MySQL 5.7.11编译安装过程记录（个人开发级别 原创）" target="_blank" rel="external">http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/</a>
+      <a href="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/" title="MySql 5.7.11编译安装过程记录（个人开发级别 原创）" target="_blank" rel="external">http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/</a>
     </li>
     
     <li class="post-copyright-license">
