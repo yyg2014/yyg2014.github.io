@@ -45,6 +45,8 @@
   
     
     
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    
 
 </head>
 
@@ -123,7 +125,7 @@
         
         
         
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories active">
           <a href="/categories">
             
             <i class="icon icon-folder"></i>
@@ -145,7 +147,7 @@
         
         
         
-        <li class="menu-item menu-item-repository active">
+        <li class="menu-item menu-item-repository">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -399,8 +401,9 @@
   <section id="comments">
   	
        
-    <div id="uyan_frame"></div>
 
+
+    
     
   </section>
 
@@ -537,8 +540,24 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     
         
     
-    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '什么是CAS协议', 
+  owner: 'yyg2014', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'yyg2014.github.io',
+  oauth: {
+    client_id: '4df0e88061cfffe2697a',
+    client_secret: '315bf226194e828f2e343a822c43a4dc3bbd1d45',
+  }
+})
+gitment.render('comments')
+</script>
 
+    
 
     
     
