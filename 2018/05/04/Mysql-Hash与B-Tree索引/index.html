@@ -20,14 +20,14 @@
   
   <title>MySql Hash与B-Tree索引 | 杨雨庚的博客</title>
   <meta name="description" content="MySql Hash索引和B-Tree索引的区别究竟在哪里呢？相信很多人都有这样的疑问，下文对两者的区别进行了详细的分析，供您参考。 MySql Hash索引结构的特殊性，其检索效率非常高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引。 可能很多人又有疑问了，既然 Hash 索">
-<meta name="keywords" content="MySql">
+<meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql Hash与B-Tree索引">
 <meta property="og:url" content="http://yyg.wiki/2018/05/04/Mysql-Hash与B-Tree索引/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
 <meta property="og:description" content="MySql Hash索引和B-Tree索引的区别究竟在哪里呢？相信很多人都有这样的疑问，下文对两者的区别进行了详细的分析，供您参考。 MySql Hash索引结构的特殊性，其检索效率非常高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引。 可能很多人又有疑问了，既然 Hash 索">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-07T03:44:39.000Z">
+<meta property="og:updated_time" content="2018-05-07T06:26:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql Hash与B-Tree索引">
 <meta name="twitter:description" content="MySql Hash索引和B-Tree索引的区别究竟在哪里呢？相信很多人都有这样的疑问，下文对两者的区别进行了详细的分析，供您参考。 MySql Hash索引结构的特殊性，其检索效率非常高，索引的检索可以一次定位，不像B-Tree 索引需要从根节点到枝节点，最后才能访问到页节点这样多次的IO访问，所以 Hash 索引的查询效率要远高于 B-Tree 索引。 可能很多人又有疑问了，既然 Hash 索">
@@ -123,7 +123,7 @@
         
         
         
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories active">
           <a href="/categories">
             
             <i class="icon icon-folder"></i>
@@ -145,7 +145,7 @@
         
         
         
-        <li class="menu-item menu-item-repository active">
+        <li class="menu-item menu-item-repository">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -190,7 +190,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -328,7 +328,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/MySql/">MySql</a>
+	<a class="article-tag-link" href="/tags/Mysql/">Mysql</a>
   </span>
 
 
