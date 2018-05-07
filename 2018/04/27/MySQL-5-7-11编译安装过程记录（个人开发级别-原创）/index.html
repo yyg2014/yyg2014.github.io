@@ -20,7 +20,7 @@
   
   <title>MySql 5.7.11编译安装过程记录（个人开发级别 原创） | 杨雨庚的博客</title>
   <meta name="description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySql版本：5.7.11首先到官网下载MySql">
-<meta name="keywords" content="Linux,MySql">
+<meta name="keywords" content="Linux,Mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql 5.7.11编译安装过程记录（个人开发级别 原创）">
 <meta property="og:url" content="http://yyg.wiki/2018/04/27/MySQL-5-7-11编译安装过程记录（个人开发级别-原创）/index.html">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557204/aeaa110e-032e-11e6-996c-10ee6fa55ecc.png">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557322/52a2ae6a-032f-11e6-973c-55bdb12ab21e.png">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/9836394/14557425/e24bc272-032f-11e6-89a8-fa062c1c760a.png">
-<meta property="og:updated_time" content="2018-05-07T03:44:11.000Z">
+<meta property="og:updated_time" content="2018-05-07T06:25:41.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql 5.7.11编译安装过程记录（个人开发级别 原创）">
 <meta name="twitter:description" content="最近看到各个论坛可技术相关网站，许多文章都在谈论MySQL5.7版本与之前的5.6 或 5.5 有很大的性能提升而且具体的编译方式也有许多变动，所以在本地虚拟机中尝试编译安装后 体验一下不同之处。！！！ 安装过程中不合理的地方，欢迎批评指正，本人非常珍惜增长知识，改善不足的机会！！！(原创文档，转载请注明！)系统环境：Ubuntu14.04LTSMySql版本：5.7.11首先到官网下载MySql">
@@ -137,7 +137,7 @@
         
         
         
-        <li class="menu-item menu-item-categories active">
+        <li class="menu-item menu-item-categories">
           <a href="/categories">
             
             <i class="icon icon-folder"></i>
@@ -159,7 +159,7 @@
         
         
         
-        <li class="menu-item menu-item-repository">
+        <li class="menu-item menu-item-repository active">
           <a href="/repository">
             
             <i class="icon icon-project"></i>
@@ -204,7 +204,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -342,7 +342,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Linux/">Linux</a>, <a class="article-tag-link" href="/tags/MySql/">MySql</a>
+	<a class="article-tag-link" href="/tags/Linux/">Linux</a>, <a class="article-tag-link" href="/tags/Mysql/">Mysql</a>
   </span>
 
 
