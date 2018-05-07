@@ -11,9 +11,9 @@
         <title>简单的Windows Server 2008 Ngxin服务器启动/监控脚本</title>
         <pubTime>2018-04-27T02:17:20.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>PHP</tag>
          
         <tag>Windows</tag>
          
@@ -174,9 +174,9 @@
         <title>Ubuntu16.04.1LTS 下PHP7.1.0编译安装时提示 Makefile:288: recipe for target 'sapi/cli/php' failed 及 undefined reference to 'XpmLibraryVersion'错误解决(原创)</title>
         <pubTime>2018-04-27T01:54:50.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>PHP</tag>
          
          
            
@@ -379,11 +379,11 @@
         <title>LNMP环境搭建（Ubuntu14.04LTS+Nginx1.8.0+Mysql5.5.29+PHP5.6.13）原创 </title>
         <pubTime>2018-04-26T07:24:18.000Z</pubTime>
         
+        <tag>Linux</tag>
+         
         <tag>PHP</tag>
          
         <tag>Nginx</tag>
-         
-        <tag>Linux</tag>
          
          
            
