@@ -19,18 +19,18 @@
   
   
   <title>MySql常见索引失效原因总结 | 杨雨庚的博客</title>
-  <meta name="description" content="常见Mysql索引失效原因总结   1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引  2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使">
-<meta name="keywords" content="Mysql">
+  <meta name="description" content="常见Mysql索引失效原因总结  1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引 2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用">
+<meta name="keywords" content="MySql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql常见索引失效原因总结">
 <meta property="og:url" content="http://yyg.wiki/2018/05/07/Mysql常见索引失效原因总结/index.html">
 <meta property="og:site_name" content="杨雨庚的博客">
-<meta property="og:description" content="常见Mysql索引失效原因总结   1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引  2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使">
+<meta property="og:description" content="常见Mysql索引失效原因总结  1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引 2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-07T06:12:14.000Z">
+<meta property="og:updated_time" content="2018-05-07T06:14:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql常见索引失效原因总结">
-<meta name="twitter:description" content="常见Mysql索引失效原因总结   1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引  2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使">
+<meta name="twitter:description" content="常见Mysql索引失效原因总结  1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引 2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引 3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yyg.wiki/2018/05/07/Mysql常见索引失效原因总结/index.html">
   
@@ -190,7 +190,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bash/">Bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memcache/">Memcache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SVN/">SVN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UML/">UML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -328,7 +328,7 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/Mysql/">Mysql</a>
+	<a class="article-tag-link" href="/tags/MySql/">MySql</a>
   </span>
 
 
@@ -341,10 +341,8 @@
     <div class="article-entry markdown-body" itemprop="articleBody">
       
         <h4 id="常见Mysql索引失效原因总结"><a href="#常见Mysql索引失效原因总结" class="headerlink" title="常见Mysql索引失效原因总结"></a>常见Mysql索引失效原因总结</h4><blockquote>
-<blockquote>
 </blockquote>
 <p>1、WHERE字句的查询条件里有不等于号（WHERE column!=…），MYSQL将无法使用索引</p>
-</blockquote>
 <p>2、类似地，如果WHERE字句的查询条件里使用了函数（如：WHERE DAY(column)=…），MYSQL将无法使用索引</p>
 <p>3、在JOIN操作中（需要从多个数据表提取数据时），MYSQL只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用</p>
 <p>4、如果WHERE子句的查询条件里使用了比较操作符LIKE和REGEXP，MYSQL只有在搜索模板的第一个字符不是通配符的情况下才能使用索引。比如说，如果查询条件是LIKE ‘abc%’,MYSQL将使用索引；如果条件是LIKE ‘%abc’，MYSQL将不使用索引。</p>
